@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { Ubuntu } from "next/font/google";
 import { LangueProvider } from "./lib/LangueContext";
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <WhatsAppWidget />
           <RappelWidget />
         </LangueProvider>
+        <Analytics />
       </body>
     </html>
   );
