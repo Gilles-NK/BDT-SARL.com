@@ -122,7 +122,7 @@ export default function Hero() {
         </div>
 
         {/* Titre */}
-        <div style={{ marginBottom: 20, animation: "hFadeUp 0.55s 0.10s ease both" }}>
+        <h1 style={{ marginBottom: 20, animation: "hFadeUp 0.55s 0.10s ease both", margin: 0, padding: 0 }}>
           {(isFr ? slide.titleFr : slide.titleEn).map((line, i) => (
             <div key={i} style={{ marginBottom: 5 }}>
               <span style={{
@@ -135,7 +135,7 @@ export default function Hero() {
               </span>
             </div>
           ))}
-        </div>
+        </h1>
 
         {/* Sous-titre */}
         <div style={{ marginBottom: 32, animation: "hFadeUp 0.55s 0.20s ease both" }}>
@@ -150,7 +150,7 @@ export default function Hero() {
 
         {/* Boutons */}
         <div className="hero-btns" style={{ display: "flex", flexWrap: "nowrap", gap: 12, animation: "hFadeUp 0.55s 0.30s ease both" }}>
-          <Link href={slide.cta.href} 
+          <Link href={`${slide.cta.href}`} 
             className="btn-premium hover-lift"
             style={{
               display: "inline-flex", alignItems: "center", gap: 8,
@@ -163,7 +163,7 @@ export default function Hero() {
             {isFr ? slide.cta.fr : slide.cta.en}
           </Link>
 
-          <Link href={slide.cta2.href} 
+          <Link href={`${slide.cta2.href}`} 
             className="hover-lift"
             style={{
               display: "inline-flex", alignItems: "center",

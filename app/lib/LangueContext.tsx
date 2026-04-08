@@ -1,36 +1,45 @@
-// ─────────────────────────────────────────────────────────────
-//  CONTEXTE DE LANGUE — app/lib/LangueContext.tsx
-//  Fournit la langue active et les traductions à toute l'app.
-//  Usage dans un composant :
-//    const { t, langue, setLangue } = useLangue();
-// ─────────────────────────────────────────────────────────────
 "use client";
-import { createContext, useContext, useState, ReactNode } from "react";
+import React, { createContext, useContext, useState, ReactNode } from "react";
 import translations, { Langue, Traductions } from "./translations";
 
 interface LangueContextType {
-  langue:    Langue;
+  langue: Langue;
   setLangue: (l: Langue) => void;
-  t:         Traductions;
+  t: Traductions;
 }
 
 const LangueContext = createContext<LangueContextType>({
-  langue:    "fr",
+  langue: "fr",
   setLangue: () => {},
-  t:         translations["fr"],
+  t: translations["fr"],
 });
 
 export function LangueProvider({ children }: { children: ReactNode }) {
   const [langue, setLangue] = useState<Langue>("fr");
-  const t = translations[langue];
+
+  // Charger la langue au montage
+  React.useEffect(() => {
+    const saved = localStorage.getItem("bdt_lang") as Langue;
+    if (saved && (saved === "fr" || saved === "en")) {
+      setLangue(saved);
+    }
+  }, []);
+
+  // Sauvegarder la langue lors du changement
+  const handleSetLangue = (l: Langue) => {
+    setLangue(l);
+    localStorage.setItem("bdt_lang", l);
+  };
+
+  const t = translations[langue] || translations["fr"];
+
   return (
-    <LangueContext.Provider value={{ langue, setLangue, t }}>
+    <LangueContext.Provider value={{ langue, setLangue: handleSetLangue, t }}>
       {children}
     </LangueContext.Provider>
   );
 }
 
-// Hook à utiliser dans tous les composants
 export function useLangue() {
   return useContext(LangueContext);
 }

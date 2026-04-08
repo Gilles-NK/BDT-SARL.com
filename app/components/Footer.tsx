@@ -16,7 +16,7 @@ import {
 import { useLangue } from "../lib/LangueContext";
 
 export default function Footer() {
-  const { t } = useLangue();
+  const { t, langue } = useLangue();
   const f = t.footer;
 
   return (
@@ -72,13 +72,13 @@ export default function Footer() {
 
           {/* Colonne droite : nav en bas à droite, même niveau que dernière adresse */}
           <nav className="nav-links">
-            <Link href="/services" className="nav-item">{t.nav.services}</Link>
+            <Link href={`/services`} className="nav-item">{t.nav.services}</Link>
             <span className="nav-sep">|</span>
-            <Link href="/about" className="nav-item">{t.nav.apropos}</Link>
+            <Link href={`/about`} className="nav-item">{t.nav.apropos}</Link>
             <span className="nav-sep">|</span>
-            <Link href="/faq" className="nav-item">{t.nav.faq}</Link>
+            <Link href={`/faq`} className="nav-item">{t.nav.faq}</Link>
             <span className="nav-sep">|</span>
-            <Link href="/contact" className="nav-item">{t.nav.contact}</Link>
+            <Link href={`/contact`} className="nav-item">{t.nav.contact}</Link>
           </nav>
 
         </div>
@@ -90,9 +90,9 @@ export default function Footer() {
         <div className="footer-bottom">
           <p>{f.droits}</p>
           <div className="legal-links">
-            <Link href="#" className="legal-link">{f.confidentialite}</Link>
+            <Link href={`/confidentialite`} className="legal-link">{f.confidentialite}</Link>
             <span className="legal-sep">·</span>
-            <Link href="#" className="legal-link">{f.mentions}</Link>
+            <Link href={`/mentions-legales`} className="legal-link">{f.mentions}</Link>
           </div>
         </div>
 

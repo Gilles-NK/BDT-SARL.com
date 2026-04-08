@@ -49,11 +49,16 @@ export default function Header() {
   function handleSearch(e: React.FormEvent) {
     e.preventDefault();
     if (query.trim()) {
-      router.push("/faq?q=" + encodeURIComponent(query.trim()));
+      router.push(`/faq?q=${encodeURIComponent(query.trim())}`);
       setSearchOpen(false);
       setQuery("");
     }
   }
+
+  const changeLang = (newLang: "fr" | "en") => {
+    if (newLang === langue) return;
+    setLangue(newLang);
+  };
 
   const styleLang = (l: "fr" | "en"): React.CSSProperties => ({
     background: "none", border: "none", cursor: "pointer",
@@ -65,8 +70,8 @@ export default function Header() {
   });
 
   const NAV_ITEMS = [
-    { href: "/faq", label: t.nav.faq, Icon: HelpCircle },
-    { href: "/devis", label: t.nav.devis, Icon: FileText },
+    { href: `/faq`, label: t.nav.faq, Icon: HelpCircle },
+    { href: `/devis`, label: t.nav.devis, Icon: FileText },
   ];
 
   return (
@@ -84,7 +89,7 @@ export default function Header() {
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 2rem", height: 80, display: "flex", alignItems: "center" }}>
 
           {/* Logo */}
-          <Link href="/" className="hover-lift" style={{ display: "block" }}>
+          <Link href={`/`} className="hover-lift" style={{ display: "block" }}>
             <Image src="/images/logo-slogan1.png" alt="BDT" width={220} height={64}
               style={{ 
                 objectFit: "contain", 
@@ -139,9 +144,9 @@ export default function Header() {
 
             {/* Switch langue */}
             <div style={{ display: "flex", gap: "0.1rem", alignItems: "center" }}>
-              <button onClick={() => setLangue("fr")} style={styleLang("fr")}>fr</button>
+              <button onClick={() => changeLang("fr")} style={styleLang("fr")}>fr</button>
               <span style={{ color: "#d1d5db", fontSize: "0.82rem" }}>|</span>
-              <button onClick={() => setLangue("en")} style={styleLang("en")}>en</button>
+              <button onClick={() => changeLang("en")} style={styleLang("en")}>en</button>
             </div>
           </nav>
 
@@ -256,14 +261,14 @@ export default function Header() {
         boxShadow: "-10px 0 30px rgba(0,0,0,0.1)"
       }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "1.25rem 1.75rem", borderBottom: "1px solid #f3f4f6" }}>
-          <Link href="/" onClick={() => setMenuOpen(false)}>
+          <Link href={`/`} onClick={() => setMenuOpen(false)}>
             <Image src="/images/logo-slogan1.png" alt="BDT" width={160} height={56} style={{ objectFit: "contain", height: 56, width: "auto" }} />
           </Link>
           <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
             <div style={{ display: "flex", gap: "0.1rem", alignItems: "center" }}>
-              <button onClick={() => setLangue("fr")} style={styleLang("fr")}>fr</button>
+              <button onClick={() => changeLang("fr")} style={styleLang("fr")}>fr</button>
               <span style={{ color: "#d1d5db" }}>|</span>
-              <button onClick={() => setLangue("en")} style={styleLang("en")}>en</button>
+              <button onClick={() => changeLang("en")} style={styleLang("en")}>en</button>
             </div>
             <button onClick={() => setMenuOpen(false)} aria-label={t.nav.fermer}
               style={{ background: "none", border: "none", cursor: "pointer", color: "#6b7280", padding: "0.3rem" }}>

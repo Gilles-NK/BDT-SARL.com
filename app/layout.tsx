@@ -24,11 +24,14 @@ const ubuntu = Ubuntu({
   display: "swap",
 });
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="fr" className={ubuntu.className}>
       <body>
-        {/* LangueProvider enveloppe toute l'app — langue disponible partout */}
         <LangueProvider>
           <Header />
           <main>{children}</main>

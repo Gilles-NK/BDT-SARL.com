@@ -24,6 +24,7 @@ import Processus    from "./components/sections/Processus";
 import ContactSection from "./components/ContactSection";
 import Temoignages  from "./components/sections/Temoignages";
 import CtaFinal     from "./components/sections/CtaFinal";
+import { Metadata } from "next";
 
 export default function Home() {
   return (

@@ -6,8 +6,8 @@ import { useLangue } from "../../lib/LangueContext";
 const ICONS = [Search, Wrench, CheckCircle, Phone];
 
 export default function PourquoiBDTCompact() {
-  const { t } = useLangue();
-
+  const { t, langue } = useLangue();
+  
   return (
     <section className="bdt-compact-section">
       <div className="compact-glass-container">
@@ -19,7 +19,7 @@ export default function PourquoiBDTCompact() {
         </div>
 
         <p className="main-text">
-          {t.processus.sousTitre}. Façonnez votre infrastructure de sécurité selon vos règles. 
+          {t.processus.sousTitre}
         </p>
 
         {/* Grille des étapes épurée */}
@@ -43,8 +43,8 @@ export default function PourquoiBDTCompact() {
 
         {/* Bouton avec découpe signature */}
         <div className="btn-center">
-          <Link href="/devis" className="bdt-action-btn">
-            Lancer mon étude technique
+          <Link href={`/devis`} className="bdt-action-btn">
+            {langue === "fr" ? "Lancer mon étude technique" : "Start my technical study"}
           </Link>
         </div>
       </div>

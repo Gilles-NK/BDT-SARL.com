@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { useLangue } from "../lib/LangueContext";
 
 /**
  * Ce composant était auparavant un widget de rappel avec formulaire.
@@ -7,10 +8,12 @@ import Link from "next/link";
  * direct vers la page de devis pour simplifier le parcours client.
  */
 export default function RappelWidget() {
+  const { langue, t } = useLangue();
+  
   return (
     <div style={{ position: "fixed", bottom: 110, right: 30, zIndex: 9998 }}>
       <Link
-        href="/devis"
+        href={`/devis`}
         style={{
           background: "#0066ff",
           color: "#fff",
@@ -39,11 +42,11 @@ export default function RappelWidget() {
           const b = e.currentTarget;
           b.style.transform = "translateY(0) scale(1)";
           b.style.boxShadow = "0 4px 16px rgba(0,102,204,0.4)";
-          b.style.background = "#0083ff";
+          b.style.background = "#0066ff";
         }}
       >
         <span style={{ fontSize: "1.1rem" }}>📄</span>
-        Devis gratuit
+        {langue === "fr" ? "Devis gratuit" : "Free quote"}
       </Link>
     </div>
   );
