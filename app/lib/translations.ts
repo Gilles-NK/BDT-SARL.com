@@ -58,6 +58,8 @@ const translations = {
       titre: "Nos services principaux",
       sousTitre: "Découvrez nos solutions complètes pour protéger votre entreprise et optimiser vos systèmes",
       enSavoir: "Voir le détail",
+      btnServices: "Nos Services",
+      btnClients: "Nos Clients",
       items: [
         { titre: "Vidéosurveillance & Sécurité Électronique", sousTitre: "Installation et maintenance de caméras. Surveillance à distance et en temps réel." },
         { titre: "Infrastructures & Réseaux Informatiques", sousTitre: "Installation réseau, serveurs, maintenance. Dépannage et assistance technique." },
@@ -369,6 +371,8 @@ const translations = {
       titre: "Our main services",
       sousTitre: "Discover our complete solutions to protect your business and optimize your systems",
       enSavoir: "Learn more",
+      btnServices: "Our Services",
+      btnClients: "Our Clients",
       items: [
         { titre: "Video Surveillance & Electronic Security", sousTitre: "Camera installation and maintenance. Remote and real-time monitoring." },
         { titre: "IT Infrastructures & Networks", sousTitre: "Network installation, servers, maintenance. Troubleshooting and technical assistance." },

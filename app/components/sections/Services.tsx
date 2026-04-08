@@ -86,8 +86,8 @@ export default function Services() {
         {/* Switcher Adesso */}
         <div style={{ textAlign: "center", marginBottom: "3rem" }}>
           <AdessoSwitch
-            leftLabel={view === "services" ? "Nos Services" : "Services"}
-            rightLabel={view === "clients" ? "Nos Clients" : "Clients"}
+            leftLabel={sLocal.btnServices}
+            rightLabel={sLocal.btnClients}
             active={view === "services" ? "left" : "right"}
             onChange={(val) => setView(val === "left" ? "services" : "clients")}
           />

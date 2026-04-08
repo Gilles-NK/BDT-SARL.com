@@ -139,13 +139,13 @@ export default function Devis() {
       <section style={{ padding: "4rem 2rem", background: "#fdfdfd" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto", marginTop: "-6rem", position: "relative", zIndex: 10 }}>
           {sent ? (
-            <div style={{ background: "#fff", borderRadius: "16px", boxShadow: "0 10px 40px rgba(0,0,0,0.08)", padding: "4rem", textAlign: "center", borderTop: `4px solid ${ACCENT}` }}>
-              <div style={{ display: "inline-flex", justifyContent: "center", alignItems: "center", width: 80, height: 80, background: "rgba(212, 175, 55, 0.1)", borderRadius: "50%", marginBottom: "1.5rem" }}>
-                <CheckCircle2 size={40} color={ACCENT} />
+            <div style={{ background: "rgba(255, 255, 255, 0.8)", backdropFilter: "blur(20px)", borderRadius: "24px", boxShadow: "0 25px 50px -12px rgba(0,0,0,0.15)", padding: "4rem", textAlign: "center", border: "1px solid rgba(255, 255, 255, 0.4)" }}>
+              <div style={{ display: "inline-flex", justifyContent: "center", alignItems: "center", width: 100, height: 100, background: "rgba(0, 102, 255, 0.05)", borderRadius: "50%", marginBottom: "2rem", animation: "pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)" }}>
+                <CheckCircle2 size={50} color={ADESSO_BLUE} />
               </div>
-              <h3 style={{ fontFamily: "Ubuntu, sans-serif", color: NAVY, fontSize: "2rem", marginBottom: "1rem", fontWeight: 700 }}>{dLocal.succesTitre}</h3>
-              <p style={{ color: "#64748b", fontSize: "1.1rem", marginBottom: "2.5rem" }}>{dLocal.succesDesc}</p>
-              <Link href="/" style={{ background: ADESSO_BLUE, color: "#fff", padding: "1rem 2.5rem", borderRadius: "8px", textDecoration: "none", fontWeight: 700, display: "inline-block", transition: "0.3s", boxShadow: "0 4px 14px rgba(0, 102, 255, 0.3)" }}>
+              <h3 style={{ fontFamily: "Ubuntu, sans-serif", color: NAVY, fontSize: "2.5rem", marginBottom: "1rem", fontWeight: 800 }}>{dLocal.succesTitre}</h3>
+              <p style={{ color: "#64748b", fontSize: "1.1rem", marginBottom: "3rem", maxWidth: "600px", margin: "0 auto 3rem" }}>{dLocal.succesDesc}</p>
+              <Link href="/" style={{ background: ADESSO_BLUE, color: "#fff", padding: "1.2rem 3rem", borderRadius: "12px", textDecoration: "none", fontWeight: 700, display: "inline-block", transition: "0.3s", boxShadow: "0 10px 25px rgba(0, 102, 255, 0.3)", letterSpacing: "0.5px" }}>
                 {dLocal.retourPortail}
               </Link>
             </div>
@@ -252,25 +252,42 @@ export default function Devis() {
                   <span style={numBadge}>04</span>
                   {dLocal.sec4Titre}
                 </h3>
-                <div className="form-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", marginBottom: "2.5rem" }}>
+                 <div className="form-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", marginBottom: "2.5rem" }}>
                   {dLocal.contactOptions.map(opt => {
-                    const Icon = opt.val === "email" ? Mail : MessageCircle;
+                    const isWA = opt.val === "whatsapp";
+                    const Icon = isWA ? MessageCircle : Mail;
+                    const isSelected = form.contactPreference === opt.val;
+                    
                     return (
-                      <div key={opt.val} onClick={() => setForm({ ...form, contactPreference: opt.val })} className="contact-card"
+                      <div key={opt.val} onClick={() => setForm({ ...form, contactPreference: opt.val })} className="contact-card-premium"
                         style={{
-                          padding: "1.5rem", border: form.contactPreference === opt.val ? `2px solid ${ACCENT}` : "1px solid #e2e8f0",
-                          borderRadius: "12px", cursor: "pointer",
-                          background: form.contactPreference === opt.val ? "#fff" : "#fff",
-                          boxShadow: form.contactPreference === opt.val ? "0 4px 15px rgba(212, 175, 55, 0.15)" : "none",
-                          display: "flex", alignItems: "center", gap: "1.2rem",
-                          transition: "all 0.3s ease"
+                          padding: "1.5rem",
+                          border: isSelected ? `2px solid ${isWA ? "#25D366" : "#0066ff"}` : "1px solid #e2e8f0",
+                          borderRadius: "20px",
+                          cursor: "pointer",
+                          background: isSelected ? (isWA ? "rgba(37, 211, 102, 0.05)" : "rgba(0, 102, 255, 0.05)") : "#fff",
+                          boxShadow: isSelected ? `0 10px 20px -5px ${isWA ? "rgba(37, 211, 102, 0.15)" : "rgba(0, 102, 255, 0.15)"}` : "none",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "1.25rem",
+                          transition: "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)"
                         }}>
-                        <div style={{ width: 45, height: 45, borderRadius: "50%", background: form.contactPreference === opt.val ? ACCENT : "#f1f5f9", display: "flex", alignItems: "center", justifyContent: "center", transition: "0.3s" }}>
-                          <Icon color={form.contactPreference === opt.val ? "#fff" : "#64748b"} size={22} />
+                        <div style={{ 
+                          width: 56, 
+                          height: 56, 
+                          borderRadius: "15px", 
+                          background: isSelected ? (isWA ? "#25D366" : "#0066ff") : "#f1f5f9", 
+                          display: "flex", 
+                          alignItems: "center", 
+                          justifyContent: "center", 
+                          transition: "0.3s",
+                          color: isSelected ? "#fff" : "#64748b"
+                        }}>
+                          <Icon size={26} strokeWidth={2} />
                         </div>
                         <div>
-                          <div style={{ fontWeight: 800, fontSize: "0.95rem", color: NAVY, marginBottom: 2 }}>{opt.label}</div>
-                          <div style={{ fontSize: "0.8rem", color: "#64748b" }}>{opt.sub}</div>
+                          <div style={{ fontWeight: 800, fontSize: "1rem", color: NAVY, marginBottom: 2 }}>{opt.label}</div>
+                          <div style={{ fontSize: "0.85rem", color: "#64748b" }}>{opt.sub}</div>
                         </div>
                       </div>
                     )

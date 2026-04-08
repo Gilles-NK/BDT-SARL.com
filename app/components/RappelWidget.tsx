@@ -12,7 +12,7 @@ export default function RappelWidget() {
       <Link
         href="/devis"
         style={{
-          background: "#0083ff",
+          background: "#0066ff",
           color: "#fff",
           border: "none",
           borderRadius: 50,

@@ -3,6 +3,7 @@ import { useState, useCallback } from "react";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Clock } from "../components/Icons";
 import { useLangue } from "../lib/LangueContext";
+import ContactChoiceModal from "../components/ContactChoiceModal";
 
 type ChampId = "nom" | "prenom" | "email" | "tel" | "entreprise" | "sujet" | "message";
 type Formulaire = Record<ChampId, string>;
@@ -310,42 +311,19 @@ export default function Contact() {
       `}} />
 
       {/* ── MODALE CHOIX ── */}
-      {etat === "choix" && (
-        <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)", zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <div style={{ background: "#fff", padding: "2.5rem", maxWidth: 420, width: "90%", borderRadius: 0, boxShadow: "0 20px 60px rgba(0,0,0,0.3)" }}>
-            {/* ← TRADUIT */}
-            <h3 style={{ fontFamily: "Ubuntu, sans-serif", color: "var(--navy)", marginBottom: "0.5rem" }}>{c.choixTitre}</h3>
-            <p style={{ color: "var(--gray-500)", fontSize: "0.9rem", marginBottom: "1.5rem" }}>{c.choixSub}</p>
-
-            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-              <button
-                onClick={() => envoyer("whatsapp")}
-                style={{ background: "#25D366", color: "#fff", border: "none", padding: "1rem", borderRadius: 0, fontWeight: 700, fontSize: "1rem", cursor: "pointer", textAlign: "left" }}
-              >
-                {/* ← TRADUIT */}
-                📱 {c.parWA}
-                <span style={{ display: "block", fontWeight: 400, fontSize: "0.8rem", opacity: 0.85 }}>{c.parWASub}</span>
-              </button>
-
-              <button
-                onClick={() => envoyer("email")}
-                style={{ background: "#0066ff", color: "#fff", border: "none", padding: "1rem", borderRadius: 0, fontWeight: 700, fontSize: "1rem", cursor: "pointer", textAlign: "left" }}
-              >
-                {/* ← TRADUIT */}
-                ✉️ {c.parEmail}
-                <span style={{ display: "block", fontWeight: 400, fontSize: "0.8rem", opacity: 0.85 }}>{c.parEmailSub}</span>
-              </button>
-
-              <button
-                onClick={() => setEtat("idle")}
-                style={{ background: "transparent", color: "var(--gray-500)", border: "1px solid #e2e8f0", padding: "0.75rem", borderRadius: 0, cursor: "pointer" }}
-              >
-                Annuler / Cancel
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      <ContactChoiceModal 
+        isOpen={etat === "choix"}
+        onClose={() => setEtat("idle")}
+        onSelect={envoyer}
+        translations={{
+          choixTitre: c.choixTitre,
+          choixSub: c.choixSub,
+          parEmail: c.parEmail,
+          parEmailSub: c.parEmailSub,
+          parWA: c.parWA,
+          parWASub: c.parWASub
+        }}
+      />
     </div>
   );
 }

@@ -149,7 +149,7 @@ export default function Hero() {
         </div>
 
         {/* Boutons */}
-        <div style={{ display: "flex", flexWrap: "wrap" as const, gap: 12, animation: "hFadeUp 0.55s 0.30s ease both" }}>
+        <div className="hero-btns" style={{ display: "flex", flexWrap: "nowrap", gap: 12, animation: "hFadeUp 0.55s 0.30s ease both" }}>
           <Link href={slide.cta.href} 
             className="btn-premium hover-lift"
             style={{
@@ -215,7 +215,22 @@ export default function Hero() {
           );
         })}
       </div>
-
+      
+      <style>{`
+        @media (max-width: 560px) {
+          .hero-btns {
+            gap: 8px !important;
+            flex-wrap: nowrap !important;
+          }
+          .hero-btns a {
+            padding: 0.7rem 0.9rem !important;
+            font-size: 0.8rem !important;
+            white-space: nowrap !important;
+            flex: 1;
+            justify-content: center;
+          }
+        }
+      `}</style>
     </section>
   );
 }

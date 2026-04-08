@@ -232,10 +232,29 @@ export default function Header() {
       )}
 
       {/* Overlay mobile */}
-      <div onClick={() => setMenuOpen(false)} style={{ position: "fixed", inset: 0, zIndex: 1998, background: "rgba(0,0,0,0.18)", opacity: menuOpen ? 1 : 0, pointerEvents: menuOpen ? "auto" : "none", transition: "opacity 0.3s" }} />
+      <div onClick={() => setMenuOpen(false)} style={{ 
+        position: "fixed", inset: 0, zIndex: 1998, 
+        background: "rgba(10, 15, 30, 0.4)", 
+        backdropFilter: "blur(8px)",
+        WebkitBackdropFilter: "blur(8px)",
+        opacity: menuOpen ? 1 : 0, 
+        pointerEvents: menuOpen ? "auto" : "none", 
+        transition: "opacity 0.4s ease" 
+      }} />
 
       {/* Panel mobile */}
-      <div style={{ position: "fixed", top: 0, right: 0, bottom: 0, width: "min(380px,100vw)", background: "#fff", zIndex: 1999, transform: menuOpen ? "translateX(0)" : "translateX(100%)", transition: "transform 0.32s cubic-bezier(0.4,0,0.2,1)", display: "flex", flexDirection: "column", overflowY: "auto", borderLeft: "3px solid #0066ff" }}>
+      <div style={{ 
+        position: "fixed", top: 0, right: 0, bottom: 0, 
+        width: "min(340px, 85vw)", 
+        background: "#fff", 
+        zIndex: 1999, 
+        transform: menuOpen ? "translateX(0)" : "translateX(100%)", 
+        transition: "transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)", 
+        display: "flex", flexDirection: "column", 
+        overflowY: "auto", 
+        borderLeft: "4px solid #0066ff",
+        boxShadow: "-10px 0 30px rgba(0,0,0,0.1)"
+      }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "1.25rem 1.75rem", borderBottom: "1px solid #f3f4f6" }}>
           <Link href="/" onClick={() => setMenuOpen(false)}>
             <Image src="/images/logo-slogan1.png" alt="BDT" width={160} height={56} style={{ objectFit: "contain", height: 56, width: "auto" }} />

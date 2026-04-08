@@ -35,11 +35,11 @@ export default function Footer() {
             />
           </div>
           <div className="social-links">
-            <Link href="#" className="soc-btn hover-lift" aria-label="LinkedIn"><Linkedin size={16} /></Link>
-            <Link href="#" className="soc-btn hover-lift" aria-label="Facebook"><Facebook size={16} /></Link>
-            <Link href="#" className="soc-btn hover-lift" aria-label="YouTube"><Youtube size={16} /></Link>
-            <Link href="#" className="soc-btn hover-lift" aria-label="Instagram"><Instagram size={16} /></Link>
-            <Link href="#" className="soc-btn hover-lift" aria-label="Twitter/X"><Twitter size={16} /></Link>
+            <Link href="https://www.linkedin.com/company/slbglobal/life/?lipi=urn%3Ali%3Apage%3Ad_flagship3_job_details%3Bn8np5sv3TX2dXf84szwPgw%3D%3" target="_blank" rel="noopener noreferrer" className="soc-btn hover-lift" aria-label="LinkedIn"><Linkedin size={16} /></Link>
+            <Link href="https://www.facebook.com/btucs?__cft__[0]=AZZVMYIfA9uncW2pbARET9LHsIK6arF0vPXzvKwFJCCu-UbeCbc3sjhrzjXvk0Pa_Sko6jMonUqz5h0Skzv1hDDEHFwwFSSB-50tpv_hTo_60htqLQLsu24LZTT0nCWiAvpG066c-gDKc1HtV94Hc8cw9T4r-rcn--YTEGCl9FsHnqGefuKoJSJA2lLwJjqo7ugSP-xH0a_QGLvEAMdYGFKb&__tn__=-UC%2CP-R" target="_blank" rel="noopener noreferrer" className="soc-btn hover-lift" aria-label="Facebook"><Facebook size={16} /></Link>
+            <Link href="https://youtu.be/fYyOQJ1LGwo" target="_blank" rel="noopener noreferrer" className="soc-btn hover-lift" aria-label="YouTube"><Youtube size={16} /></Link>
+            <Link href="https://www.instagram.com/gilles_nk/?__pwa=1#" target="_blank" rel="noopener noreferrer" className="soc-btn hover-lift" aria-label="Instagram"><Instagram size={16} /></Link>
+            <Link href="https://x.com/afrculturediary?s=20" target="_blank" rel="noopener noreferrer" className="soc-btn hover-lift" aria-label="Twitter/X"><Twitter size={16} /></Link>
           </div>
         </div>
 

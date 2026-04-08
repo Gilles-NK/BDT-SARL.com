@@ -204,7 +204,7 @@ export default function Presentation() {
 
         {/* ══ BLOC 4 — CTA discret ═════════════════════════════════════════ */}
         <ScrollReveal direction="up" delay={0}>
-          <div style={{
+          <div className="pres-cta" style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
@@ -248,8 +248,18 @@ export default function Presentation() {
           .pres-adesso-top      { grid-template-columns: 1fr !important; gap: 2rem !important; }
           .pres-adesso-chiffres { grid-template-columns: repeat(2, 1fr) !important; }
         }
-        @media (max-width: 560px) {
-          .pres-adesso-chiffres { grid-template-columns: repeat(2, 1fr) !important; }
+        @media (max-width: 600px) {
+          .pres-adesso-chiffres { grid-template-columns: 1fr !important; }
+          .pres-cta { 
+            flex-direction: column !important; 
+            text-align: center !important; 
+            padding: 2rem 1.5rem !important;
+            gap: 1.5rem !important;
+          }
+          .pres-cta div:last-child { 
+            justify-content: center !important; 
+            width: 100% !important;
+          }
         }
       `}</style>
     </section>
