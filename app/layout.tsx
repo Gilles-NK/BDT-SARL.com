@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import WhatsAppWidget from "./components/WhatsAppWidget";
 import RappelWidget from "./components/RappelWidget";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
