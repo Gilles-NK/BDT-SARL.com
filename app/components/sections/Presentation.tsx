@@ -172,7 +172,7 @@ export default function Presentation() {
           </div>
         </ScrollReveal>
 
-        {/* ══ BLOC 4 — CTA discret ═════════════════════════════════════════ */}
+        {/* ══ BLOC 4 — CTA avec image de fond floutée ════════════════════════ */}
         <ScrollReveal direction="up" delay={0}>
           <div className="pres-cta" style={{
             display: "flex",
@@ -183,9 +183,28 @@ export default function Presentation() {
             padding: "2rem 2.5rem",
             border: "1px solid var(--gray-200)",
             borderRadius: "var(--radius-lg)",
-            background: "var(--gray-50)",
+            position: "relative",
+            overflow: "hidden",
           }}>
-            <div>
+            {/* Image de fond floutée */}
+            <div style={{
+              position: "absolute",
+              inset: 0,
+              backgroundImage: "url('/images/1.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              filter: "blur(3px)",
+              transform: "scale(1.06)",
+            }} />
+            {/* Overlay blanc semi-transparent pour lisibilité */}
+            <div style={{
+              position: "absolute",
+              inset: 0,
+              background: "rgba(255, 255, 255, 0.65)",
+            }} />
+
+            {/* Contenu au-dessus */}
+            <div style={{ position: "relative", zIndex: 1 }}>
               <p style={{ fontSize: "1.05rem", fontWeight: 700, color: "var(--gray-900)", margin: "0 0 0.3rem" }}>
                 {p.cta.titre}
               </p>
@@ -193,7 +212,7 @@ export default function Presentation() {
                 {p.cta.desc}
               </p>
             </div>
-            <div style={{ display: "flex", gap: "0.75rem", flexShrink: 0, flexWrap: "wrap" }}>
+            <div style={{ position: "relative", zIndex: 1, display: "flex", gap: "0.75rem", flexShrink: 0, flexWrap: "wrap" }}>
               <Link href={`/services`}
                 style={{ padding: "0.7rem 1.4rem", background: "var(--blue)", color: "#fff", fontWeight: 700, fontSize: "0.88rem", borderRadius: "var(--radius)", textDecoration: "none", transition: "opacity 0.2s" }}
                 onMouseEnter={e => (e.currentTarget as HTMLElement).style.opacity = "0.85"}
@@ -209,6 +228,7 @@ export default function Presentation() {
             </div>
           </div>
         </ScrollReveal>
+
 
       </div>
 
@@ -282,6 +302,8 @@ export default function Presentation() {
             border-right: none !important;
             border-bottom: 1px solid var(--gray-200);
             padding: 2.5rem 1rem;
+            align-items: center !important;
+            text-align: center !important;
           }
           /* Enlève la bordure basse des 2 derniers */
           .chiffre-card:nth-child(3),
@@ -295,13 +317,15 @@ export default function Presentation() {
 
         /* ── Mobile : 1 colonne (style exact image) ── */
         @media (max-width: 600px) {
-          .pres-adesso-chiffres { 
+          .pres-adesso-chiffres {
             grid-template-columns: 1fr !important;
           }
           .chiffre-card {
             border-right: none !important;
             border-bottom: 1px solid var(--gray-200) !important;
-            padding: 2rem 1rem;
+            padding: 2rem 1.5rem;
+            align-items: center !important;
+            text-align: center !important;
           }
           .chiffre-card:last-child {
             border-bottom: none !important;
@@ -310,7 +334,7 @@ export default function Presentation() {
             font-size: 2.8rem;
           }
           .desc {
-            max-width: 260px;
+            max-width: 280px;
           }
 
           .pres-cta { 

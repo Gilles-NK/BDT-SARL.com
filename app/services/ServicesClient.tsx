@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "../components/ScrollReveal";
 import { useLangue } from "../lib/LangueContext";
-import { Video, Monitor, Shield, GraduationCap, CheckCircle2, ChevronRight } from "lucide-react";
+import { Video, Monitor, Shield, GraduationCap, CheckCircle2 } from "lucide-react";
 
 const getIcon = (id: string) => {
-  switch(id) {
+  switch (id) {
     case "videosurveillance": return Video;
     case "informatique": return Monitor;
     case "cybersecurite": return Shield;
@@ -16,7 +16,7 @@ const getIcon = (id: string) => {
 };
 
 const getImage = (id: string) => {
-  switch(id) {
+  switch (id) {
     case "videosurveillance": return "/images/3.jpg";
     case "informatique": return "/images/9.jpg";
     case "cybersecurite": return "/images/8.jpg";
@@ -41,13 +41,13 @@ export default function ServicesClient() {
           <Image src="/images/6.jpg" alt={sLocal.titre} fill style={{ objectFit: "cover", objectPosition: "center 40%" }} priority />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(26, 26, 46, 0.85), rgba(0, 102, 255, 0.35))" }} />
         </div>
-        
+
         <div style={{ position: "relative", zIndex: 2, textAlign: "center", padding: "0 2rem", width: "100%", maxWidth: "800px" }}>
-          <div style={{ 
-            background: "rgba(255, 255, 255, 0.1)", 
-            backdropFilter: "blur(12px)", 
+          <div style={{
+            background: "rgba(255, 255, 255, 0.1)",
+            backdropFilter: "blur(12px)",
             border: "1px solid rgba(255, 255, 255, 0.2)",
-            color: "#fff", padding: "2.5rem 3.5rem", borderRadius: "20px", 
+            color: "#fff", padding: "2.5rem 3.5rem", borderRadius: "20px",
             boxShadow: "0 20px 40px rgba(0,0,0,0.2)"
           }}>
             <h1 style={{ fontFamily: "Ubuntu, sans-serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 800, margin: 0, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "1rem" }}>
@@ -82,7 +82,7 @@ export default function ServicesClient() {
 
       {/* --- LISTE SERVICES DÉTAILLÉS --- */}
       <section style={{ padding: "4rem 2rem 8rem", background: "#fdfdfd" }}>
-        <div style={{ maxWidth: 1150, margin: "0 auto", display: "flex", flexDirection: "column", gap: "8rem" }}>
+        <div style={{ maxWidth: 1150, margin: "0 auto", display: "flex", flexDirection: "column", gap: "3.5rem" }}>
           {sLocal.items.map((srv, i) => {
             const Icon = getIcon(srv.id);
             const imagePath = getImage(srv.id);
@@ -90,11 +90,11 @@ export default function ServicesClient() {
 
             return (
               <ScrollReveal key={srv.id} direction="up" delay={50}>
-                <div className={`service-row ${isEven ? "" : "reverse"}`} style={{ 
-                  display: "flex", alignItems: "center", gap: "4rem", 
-                  position: "relative" 
+                <div className={`service-row ${isEven ? "" : "reverse"}`} style={{
+                  display: "flex", alignItems: "center", gap: "4rem",
+                  position: "relative"
                 }}>
-                  
+
                   {/* IMAGE BLOCK */}
                   <div className="img-container" style={{ flex: 1, position: "relative", height: "450px", borderRadius: "24px", overflow: "hidden", boxShadow: "0 20px 40px rgba(0,0,0,0.08)" }}>
                     <Image src={imagePath} alt={srv.titre} fill style={{ objectFit: "cover" }} />
@@ -111,16 +111,16 @@ export default function ServicesClient() {
                         {srv.accroche}
                       </span>
                     </div>
-                    
+
                     <h2 style={{ fontFamily: "Ubuntu, sans-serif", fontWeight: 800, fontSize: "2.4rem", color: NAVY, margin: "0 0 1.5rem", lineHeight: 1.2 }}>
                       {srv.titre}
                     </h2>
-                    
+
                     <p style={{ color: "#64748b", lineHeight: 1.8, fontSize: "1.05rem", marginBottom: "2.5rem" }}>
                       {srv.desc}
                     </p>
-                    
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.2rem", marginBottom: "3rem" }} className="points-grid">
+
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.2rem" }} className="points-grid">
                       {srv.points.map((p, idx) => (
                         <div key={idx} style={{ display: "flex", alignItems: "flex-start", gap: "0.8rem", background: "#fff", padding: "1rem", borderRadius: "12px", border: "1px solid #f1f5f9", boxShadow: "0 4px 10px rgba(0,0,0,0.02)" }}>
                           <CheckCircle2 size={20} color={ADESSO_BLUE} style={{ flexShrink: 0, marginTop: "2px" }} />
@@ -128,16 +128,6 @@ export default function ServicesClient() {
                         </div>
                       ))}
                     </div>
-
-                    <Link href={`/devis`} className="btn-hover" style={{ 
-                      display: "inline-flex", alignItems: "center", gap: "0.8rem",
-                      background: ADESSO_BLUE, color: "#fff", padding: "1.2rem 2.5rem", 
-                      borderRadius: "12px", fontWeight: 700, fontSize: "1rem", 
-                      textDecoration: "none", transition: "all 0.3s",
-                      boxShadow: "0 10px 25px rgba(0, 102, 255, 0.3)"
-                    }}>
-                      {sLocal.btnDevis} <ChevronRight size={18} />
-                    </Link>
                   </div>
                 </div>
               </ScrollReveal>
@@ -151,7 +141,7 @@ export default function ServicesClient() {
         {/* Cercles déco en fond */}
         <div style={{ position: "absolute", top: "-100px", left: "-100px", width: 300, height: 300, background: "rgba(0, 102, 255, 0.1)", borderRadius: "50%", filter: "blur(40px)" }} />
         <div style={{ position: "absolute", bottom: "-100px", right: "-100px", width: 300, height: 300, background: "rgba(212, 175, 55, 0.05)", borderRadius: "50%", filter: "blur(40px)" }} />
-        
+
         <div style={{ position: "relative", zIndex: 2, maxWidth: 650, margin: "0 auto" }}>
           <h2 style={{ fontFamily: "Ubuntu, sans-serif", fontSize: "2.8rem", fontWeight: 800, marginBottom: "1.5rem" }}>
             {sLocal.ctaTitre}
@@ -159,16 +149,17 @@ export default function ServicesClient() {
           <p style={{ opacity: 0.9, marginBottom: "3rem", fontSize: "1.15rem", lineHeight: 1.6 }}>
             {sLocal.ctaDesc}
           </p>
-          <Link href={`/devis`} className="btn-hover-white" style={{ 
+          <Link href={`/devis`} className="btn-hover-white" style={{
             background: "#fff", color: ADESSO_BLUE, fontWeight: 800, filter: "drop-shadow(0 10px 20px rgba(0,0,0,0.2))",
-            padding: "1.2rem 3.5rem", borderRadius: "12px", fontSize: "1.05rem", display: "inline-block", textDecoration: "none", transition: "0.3s" 
+            padding: "1.2rem 3.5rem", borderRadius: "12px", fontSize: "1.05rem", display: "inline-block", textDecoration: "none", transition: "0.3s"
           }}>
             {sLocal.ctaBtn}
           </Link>
         </div>
       </section>
 
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .service-row.reverse {
           flex-direction: row-reverse;
         }
