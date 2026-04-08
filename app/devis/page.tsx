@@ -75,10 +75,10 @@ export default function Devis() {
       : encodeURIComponent(`Demande de devis - ${form.nom}`);
 
     if (form.contactPreference === "whatsapp") {
-      window.open(`https://wa.me/237671844163?text=${encodeURIComponent(msg)}`, "_blank");
+      window.open(`https://wa.me/237689665893?text=${encodeURIComponent(msg)}`, "_blank");
     } else {
       const body = encodeURIComponent(msg);
-      window.location.href = `mailto:contact@secutechservice.com?subject=${mailSubject}&body=${body}`;
+      window.location.href = `mailto:gillesngomkap@gmail.com?subject=${mailSubject}&body=${body}`;
     }
     setSent(true);
   };
