@@ -205,7 +205,7 @@ export default function Footer() {
         /* Nav mobile */
         .nav-links {
           display: flex;
-          flex-wrap: wrap;
+          flex-wrap: nowrap;
           gap: 4px;
           justify-content: center;
           align-items: center;
@@ -220,10 +220,11 @@ export default function Footer() {
           color: #333;
           font-weight: 600;
           text-transform: uppercase;
-          font-size: 12px;
-          letter-spacing: 0.06em;
-          padding: 2px 6px;
+          font-size: 11px;
+          letter-spacing: 0.04em;
+          padding: 2px 5px;
           transition: color 0.2s;
+          white-space: nowrap;
         }
         .nav-item:hover {
           color: #0066ff;
