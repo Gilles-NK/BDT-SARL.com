@@ -3,7 +3,8 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { Search, X, FileText, HelpCircle } from "./Icons";
+import { Search, X } from "./Icons";
+import { Home, Info, HelpCircle, PhoneCall, Briefcase } from "lucide-react";
 import { useLangue } from "../lib/LangueContext";
 
 export default function Header() {
@@ -70,13 +71,15 @@ export default function Header() {
   });
 
   const NAV_ITEMS = [
-    { href: `/faq`, label: t.nav.faq, Icon: HelpCircle },
-    { href: `/devis`, label: t.nav.devis, Icon: FileText },
+    { href: `/`, label: t.nav.accueil, Icon: Home },
+    { href: `/services`, label: t.nav.services, Icon: Briefcase },
+    { href: `/about`, label: t.nav.apropos, Icon: Info },
+    { href: `/contact`, label: t.nav.contact, Icon: PhoneCall },
   ];
 
   return (
     <>
-      <header 
+      <header
         className={scrolled ? "glass-header" : ""}
         style={{
           position: "sticky", top: 0, zIndex: 1000,
@@ -85,15 +88,16 @@ export default function Header() {
           overflow: "visible",
           boxShadow: scrolled ? "0 10px 30px rgba(0,0,0,0.05)" : "none",
           transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+          fontFamily: "Ubuntu, sans-serif",
         }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 2rem", height: 80, display: "flex", alignItems: "center" }}>
 
           {/* Logo */}
           <Link href={`/`} className="hover-lift" style={{ display: "block" }}>
             <Image src="/images/logo-slogan1.png" alt="BDT" width={220} height={64}
-              style={{ 
-                objectFit: "contain", 
-                height: scrolled ? 54 : 64, 
+              style={{
+                objectFit: "contain",
+                height: scrolled ? 54 : 64,
                 width: "auto",
                 transition: "height 0.4s ease"
               }} />
@@ -103,22 +107,7 @@ export default function Header() {
           <div style={{ flexGrow: 1 }} />
 
           {/* Nav desktop */}
-          <nav className="nav-desktop" style={{ display: "flex", alignItems: "center", gap: "0.1rem" }}>
-
-            {/* Bouton Recherche — ouvre la modale */}
-            <button onClick={() => setSearchOpen(true)} aria-label={t.nav.recherche}
-              className="icon-spin-hover"
-              style={{
-                display: "flex", flexDirection: "column", alignItems: "center", gap: "0.2rem",
-                padding: "0.5rem 1rem", background: "none", border: "none", cursor: "pointer",
-                borderRadius: 6, color: "var(--gray-500)",
-                transition: "all 0.3s ease",
-              }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#0066ff"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "var(--gray-500)"; }}>
-              <Search size={22} strokeWidth={1.6} />
-              <span style={{ fontSize: "0.8rem", fontWeight: 500, lineHeight: 1, whiteSpace: "nowrap" }}>{t.nav.recherche}</span>
-            </button>
+          <nav className="nav-desktop" style={{ display: "flex", alignItems: "center", height: "80px" }}>
 
             {/* Liens nav */}
             {NAV_ITEMS.map(item => {
@@ -126,24 +115,56 @@ export default function Header() {
               return (
                 <Link key={item.href} href={item.href}
                   style={{
-                    display: "flex", flexDirection: "column", alignItems: "center", gap: "0.2rem",
-                    padding: "0.5rem 1rem", borderRadius: 6, textDecoration: "none",
-                    color: isActive ? "#0066ff" : "var(--gray-500)",
-                    borderBottom: isActive ? "2px solid #0066ff" : "2px solid transparent",
-                    transition: "color 0.18s, border-color 0.18s",
+                    display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.4rem",
+                    padding: "0 1.25rem", height: "100%", textDecoration: "none",
+                    color: isActive ? "#0066ff" : "var(--gray-600)",
+                    borderBottom: isActive ? "3px solid #0066ff" : "3px solid transparent",
+                    backgroundColor: isActive ? "#fff" : "transparent",
+                    transition: "color 0.2s, border-color 0.2s, background-color 0.2s",
                   }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#0066ff"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = isActive ? "#0066ff" : "var(--gray-500)"; }}>
-                  <item.Icon size={22} strokeWidth={1.6} />
-                  <span style={{ fontSize: "0.8rem", fontWeight: isActive ? 700 : 500, lineHeight: 1, whiteSpace: "nowrap" }}>{item.label}</span>
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLElement).style.color = "#0066ff";
+                    (e.currentTarget as HTMLElement).style.backgroundColor = "#fafafa";
+                    (e.currentTarget as HTMLElement).style.borderBottomColor = "#0066ff";
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLElement).style.color = isActive ? "#0066ff" : "var(--gray-600)";
+                    (e.currentTarget as HTMLElement).style.backgroundColor = isActive ? "#fff" : "transparent";
+                    (e.currentTarget as HTMLElement).style.borderBottomColor = isActive ? "#0066ff" : "transparent";
+                  }}>
+                  <item.Icon size={20} strokeWidth={1.3} />
+                  <span style={{ fontSize: "0.75rem", fontWeight: isActive ? 600 : 400, letterSpacing: "0.04em", textTransform: "uppercase", lineHeight: 1, whiteSpace: "nowrap" }}>{item.label}</span>
                 </Link>
               );
             })}
 
-            <div style={{ width: 1, height: 32, background: "#e5e7eb", margin: "0 0.5rem" }} />
+            {/* Bouton Recherche — ouvre la modale */}
+            <button onClick={() => setSearchOpen(true)} aria-label={t.nav.recherche}
+              style={{
+                display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.4rem",
+                padding: "0 1.25rem", height: "100%", background: "none", border: "none", cursor: "pointer",
+                color: "var(--gray-600)",
+                borderBottom: "3px solid transparent",
+                transition: "color 0.2s, background-color 0.2s, border-color 0.2s",
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLElement).style.color = "#0066ff";
+                (e.currentTarget as HTMLElement).style.backgroundColor = "#fafafa";
+                (e.currentTarget as HTMLElement).style.borderBottomColor = "#0066ff";
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLElement).style.color = "var(--gray-600)";
+                (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
+                (e.currentTarget as HTMLElement).style.borderBottomColor = "transparent";
+              }}>
+              <Search size={20} strokeWidth={1.3} />
+              <span style={{ fontSize: "0.75rem", fontWeight: 400, letterSpacing: "0.04em", textTransform: "uppercase", lineHeight: 1, whiteSpace: "nowrap" }}>{t.nav.recherche}</span>
+            </button>
+
+            <div style={{ width: 1, height: 32, background: "#e5e7eb", margin: "0 1rem" }} />
 
             {/* Switch langue */}
-            <div style={{ display: "flex", gap: "0.1rem", alignItems: "center" }}>
+            <div style={{ display: "flex", gap: "0.1rem", alignItems: "center", transform: "translateY(-4px)" }}>
               <button onClick={() => changeLang("fr")} style={styleLang("fr")}>fr</button>
               <span style={{ color: "#d1d5db", fontSize: "0.82rem" }}>|</span>
               <button onClick={() => changeLang("en")} style={styleLang("en")}>en</button>
@@ -237,26 +258,26 @@ export default function Header() {
       )}
 
       {/* Overlay mobile */}
-      <div onClick={() => setMenuOpen(false)} style={{ 
-        position: "fixed", inset: 0, zIndex: 1998, 
-        background: "rgba(10, 15, 30, 0.4)", 
+      <div onClick={() => setMenuOpen(false)} style={{
+        position: "fixed", inset: 0, zIndex: 1998,
+        background: "rgba(10, 15, 30, 0.4)",
         backdropFilter: "blur(8px)",
         WebkitBackdropFilter: "blur(8px)",
-        opacity: menuOpen ? 1 : 0, 
-        pointerEvents: menuOpen ? "auto" : "none", 
-        transition: "opacity 0.4s ease" 
+        opacity: menuOpen ? 1 : 0,
+        pointerEvents: menuOpen ? "auto" : "none",
+        transition: "opacity 0.4s ease"
       }} />
 
       {/* Panel mobile */}
-      <div style={{ 
-        position: "fixed", top: 0, right: 0, bottom: 0, 
-        width: "min(340px, 85vw)", 
-        background: "#fff", 
-        zIndex: 1999, 
-        transform: menuOpen ? "translateX(0)" : "translateX(100%)", 
-        transition: "transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)", 
-        display: "flex", flexDirection: "column", 
-        overflowY: "auto", 
+      <div style={{
+        position: "fixed", top: 0, right: 0, bottom: 0,
+        width: "min(340px, 85vw)",
+        background: "#fff",
+        zIndex: 1999,
+        transform: menuOpen ? "translateX(0)" : "translateX(100%)",
+        transition: "transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+        display: "flex", flexDirection: "column",
+        overflowY: "auto",
         borderLeft: "4px solid #0066ff",
         boxShadow: "-10px 0 30px rgba(0,0,0,0.1)"
       }}>

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 import ScrollReveal from "../ScrollReveal";
 import {
   Shield,
@@ -109,21 +110,27 @@ export default function Services() {
           }}
         >
           {view === "services" ? (
-            sLocal.items.map((item, i) => {
+            sLocal.items.map((item: any, i: number) => {
               const Icon = getIcon(i);
 
               return (
-                <div key={i} className="service-card" style={{
-                  flex: "0 0 280px",
-                  padding: "1rem",
-                  background: "transparent",
-                  transition: "all 0.4s ease",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  textAlign: "center",
-                  gap: "1.25rem"
-                }}>
+                <Link 
+                  href={`/services/${item.id}`}
+                  key={i} 
+                  className="service-card" 
+                  style={{
+                    flex: "0 0 280px",
+                    padding: "1rem",
+                    background: "transparent",
+                    transition: "all 0.4s ease",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    textAlign: "center",
+                    gap: "1.25rem",
+                    textDecoration: "none"
+                  }}
+                >
                   <div className="service-icon" style={{
                     color: "#D4AF37",
                     transition: "all 0.3s ease",
@@ -144,7 +151,7 @@ export default function Services() {
                       {item.sousTitre}
                     </p>
                   </div>
-                </div>
+                </Link>
               );
             })
           ) : (

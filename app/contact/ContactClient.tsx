@@ -75,7 +75,7 @@ export default function ContactClient() {
     { Icon: Phone, titre: c.appeler, lignes: ["+237 689 66 58 93"] },
     { Icon: Mail, titre: c.ecrire, lignes: ["gillesngomkap@gmail.com", "www.bdt-sarl.com"] },
     { Icon: MapPin, titre: c.visiter, lignes: ["Akwa, Rue Pau, 50m de United Express", "Douala, Cameroun"] },
-    { Icon: Clock, titre: c.horairesLabel, lignes: [t.footer.horaires] }, // ← réutilise la traduction du footer
+    { Icon: Clock, titre: c.horairesLabel, lignes: t.footer.horaires }, // Réutilise le tableau de traductions du footer
   ];
 
   return (

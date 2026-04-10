@@ -61,7 +61,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       goTo((current + 1) % total);
-    }, 15000);
+    }, 5000);
     return () => clearInterval(timer);
   }, [current, total]);
 
@@ -150,7 +150,7 @@ export default function Hero() {
 
         {/* Boutons */}
         <div className="hero-btns" style={{ display: "flex", flexWrap: "nowrap", gap: 12, animation: "hFadeUp 0.55s 0.30s ease both" }}>
-          <Link href={`${slide.cta.href}`} 
+          <Link href={`${slide.cta.href}`}
             className="btn-premium hover-lift"
             style={{
               display: "inline-flex", alignItems: "center", gap: 8,
@@ -163,7 +163,7 @@ export default function Hero() {
             {isFr ? slide.cta.fr : slide.cta.en}
           </Link>
 
-          <Link href={`${slide.cta2.href}`} 
+          <Link href={`${slide.cta2.href}`}
             className="hover-lift"
             style={{
               display: "inline-flex", alignItems: "center",
@@ -215,7 +215,7 @@ export default function Hero() {
           );
         })}
       </div>
-      
+
       <style>{`
         @media (max-width: 560px) {
           .hero-btns {

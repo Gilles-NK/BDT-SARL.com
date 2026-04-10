@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -12,12 +13,19 @@ import {
   MapPin,
   Mail,
   Globe,
+  Clock,
 } from "lucide-react";
 import { useLangue } from "../lib/LangueContext";
 
 export default function Footer() {
   const { t, langue } = useLangue();
   const f = t.footer;
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <footer className="footer-container">
@@ -35,11 +43,15 @@ export default function Footer() {
             />
           </div>
           <div className="social-links">
-            <Link href="https://www.linkedin.com/company/slbglobal/life/?lipi=urn%3Ali%3Apage%3Ad_flagship3_job_details%3Bn8np5sv3TX2dXf84szwPgw%3D%3" target="_blank" rel="noopener noreferrer" className="soc-btn hover-lift" aria-label="LinkedIn"><Linkedin size={16} /></Link>
-            <Link href="https://www.facebook.com/btucs?__cft__[0]=AZZVMYIfA9uncW2pbARET9LHsIK6arF0vPXzvKwFJCCu-UbeCbc3sjhrzjXvk0Pa_Sko6jMonUqz5h0Skzv1hDDEHFwwFSSB-50tpv_hTo_60htqLQLsu24LZTT0nCWiAvpG066c-gDKc1HtV94Hc8cw9T4r-rcn--YTEGCl9FsHnqGefuKoJSJA2lLwJjqo7ugSP-xH0a_QGLvEAMdYGFKb&__tn__=-UC%2CP-R" target="_blank" rel="noopener noreferrer" className="soc-btn hover-lift" aria-label="Facebook"><Facebook size={16} /></Link>
-            <Link href="https://youtu.be/fYyOQJ1LGwo" target="_blank" rel="noopener noreferrer" className="soc-btn hover-lift" aria-label="YouTube"><Youtube size={16} /></Link>
-            <Link href="https://www.instagram.com/gilles_nk/?__pwa=1#" target="_blank" rel="noopener noreferrer" className="soc-btn hover-lift" aria-label="Instagram"><Instagram size={16} /></Link>
-            <Link href="https://x.com/afrculturediary?s=20" target="_blank" rel="noopener noreferrer" className="soc-btn hover-lift" aria-label="Twitter/X"><Twitter size={16} /></Link>
+            {mounted && (
+              <>
+                <Link href="https://www.linkedin.com/company/slbglobal/life/?lipi=urn%3Ali%3Apage%3Ad_flagship3_job_details%3Bn8np5sv3TX2dXf84szwPgw%3D%3" target="_blank" rel="noopener noreferrer" className="soc-btn hover-lift" aria-label="LinkedIn"><Linkedin size={16} /></Link>
+                <Link href="https://www.facebook.com/btucs?__cft__[0]=AZZVMYIfA9uncW2pbARET9LHsIK6arF0vPXzvKwFJCCu-UbeCbc3sjhrzjXvk0Pa_Sko6jMonUqz5h0Skzv1hDDEHFwwFSSB-50tpv_hTo_60htqLQLsu24LZTT0nCWiAvpG066c-gDKc1HtV94Hc8cw9T4r-rcn--YTEGCl9FsHnqGefuKoJSJA2lLwJjqo7ugSP-xH0a_QGLvEAMdYGFKb&__tn__=-UC%2CP-R" target="_blank" rel="noopener noreferrer" className="soc-btn hover-lift" aria-label="Facebook"><Facebook size={16} /></Link>
+                <Link href="https://youtu.be/fYyOQJ1LGwo" target="_blank" rel="noopener noreferrer" className="soc-btn hover-lift" aria-label="YouTube"><Youtube size={16} /></Link>
+                <Link href="https://www.instagram.com/gilles_nk/?__pwa=1#" target="_blank" rel="noopener noreferrer" className="soc-btn hover-lift" aria-label="Instagram"><Instagram size={16} /></Link>
+                <Link href="https://x.com/afrculturediary?s=20" target="_blank" rel="noopener noreferrer" className="soc-btn hover-lift" aria-label="Twitter/X"><Twitter size={16} /></Link>
+              </>
+            )}
           </div>
         </div>
 
@@ -70,16 +82,25 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Colonne droite : nav en bas à droite, même niveau que dernière adresse */}
-          <nav className="nav-links">
-            <Link href={`/services`} className="nav-item">{t.nav.services}</Link>
-            <span className="nav-sep">|</span>
-            <Link href={`/about`} className="nav-item">{t.nav.apropos}</Link>
-            <span className="nav-sep">|</span>
-            <Link href={`/faq`} className="nav-item">{t.nav.faq}</Link>
-            <span className="nav-sep">|</span>
-            <Link href={`/contact`} className="nav-item">{t.nav.contact}</Link>
-          </nav>
+          {/* Colonne droite : horaires + liens nav */}
+          <div className="right-area">
+            <div className="info-item hours-info">
+              <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+                {t.footer.horaires.map((h: string) => <span key={h}>{h}</span>)}
+              </div>
+              <Clock size={14} className="accent-icon" />
+            </div>
+
+            <nav className="nav-links">
+              <Link href={`/services`} className="nav-item">{t.nav.services}</Link>
+              <span className="nav-sep">|</span>
+              <Link href={`/about`} className="nav-item">{t.nav.apropos}</Link>
+              <span className="nav-sep">|</span>
+              <Link href={`/faq`} className="nav-item">{t.nav.faq}</Link>
+              <span className="nav-sep">|</span>
+              <Link href={`/contact`} className="nav-item">{t.nav.contact}</Link>
+            </nav>
+          </div>
 
         </div>
 
@@ -102,7 +123,7 @@ export default function Footer() {
         .footer-container {
           background-color: #F8F7F4;
           color: #111;
-          padding: 48px 24px 28px;
+          padding: 30px 24px 20px;
           border-top: 3px solid #0066ff;
           font-family: Arial, sans-serif;
         }
@@ -124,8 +145,8 @@ export default function Footer() {
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 20px;
-          margin-bottom: 28px;
+          gap: 15px;
+          margin-bottom: 20px;
         }
 
         /* Réseaux sociaux */
@@ -156,15 +177,15 @@ export default function Footer() {
           width: 100%;
           height: 1px;
           background: #E5E2D9;
-          margin: 0 0 28px;
+          margin: 0 0 20px;
         }
 
         /* Milieu — mobile : empilé */
         .footer-middle {
           display: flex;
           flex-direction: column;
-          gap: 24px;
-          margin-bottom: 28px;
+          gap: 20px;
+          margin-bottom: 20px;
           text-align: center;
         }
 
@@ -202,11 +223,23 @@ export default function Footer() {
           transition: color 0.2s;
         }
 
+        /* Nav et Horaires à droite */
+        .right-area {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
+        .hours-info {
+          align-items: flex-start;
+          text-align: center;
+        }
+
         /* Nav mobile */
         .nav-links {
           display: flex;
           flex-wrap: nowrap;
-          gap: 4px;
+          gap: 12px;
           justify-content: center;
           align-items: center;
         }
@@ -220,9 +253,9 @@ export default function Footer() {
           color: #333;
           font-weight: 600;
           text-transform: uppercase;
-          font-size: 11px;
+          font-size: 11.5px;
           letter-spacing: 0.04em;
-          padding: 2px 5px;
+          padding: 2px 8px;
           transition: color 0.2s;
           white-space: nowrap;
         }
@@ -273,6 +306,15 @@ export default function Footer() {
             justify-content: flex-start;
           }
 
+          .right-area {
+            align-items: flex-end;
+            gap: 20px;
+          }
+          .hours-info {
+            text-align: right;
+            margin-bottom: 10px;
+          }
+
           /* Nav alignée en bas à droite, sur une ligne comme image 2 */
           .nav-links {
             flex-direction: row;
@@ -280,7 +322,7 @@ export default function Footer() {
             justify-content: flex-end;
             align-items: center;
             align-self: flex-end;
-            gap: 4px;
+            gap: 20px;
           }
 
           .footer-bottom {
