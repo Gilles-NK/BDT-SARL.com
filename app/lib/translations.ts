@@ -574,7 +574,7 @@ const translations = {
           points: [],
           details: {
             mainImage: "/images/service_video.png",
-            benefits: ["24/7 Protection", "HD Recording", "Mobile Alerts"],
+            avantages: ["24/7 Protection", "HD Recording", "Mobile Alerts"],
             tabs: [
               {
                 id: "etude", label: "Study & Engineering",
@@ -599,7 +599,7 @@ const translations = {
           points: [],
           details: {
             mainImage: "/images/service_infra.png",
-            benefits: ["High Availability", "Optimal Bandwidth", "Network Security"],
+            avantages: ["High Availability", "Optimal Bandwidth", "Network Security"],
             tabs: [
               {
                 id: "architecture", label: "Network Architecture",
@@ -624,7 +624,7 @@ const translations = {
           points: [],
           details: {
             mainImage: "/images/service_acces.png",
-            benefits: ["Advanced Biometrics", "Centralized Management", "Real-time Tracking"],
+            avantages: ["Advanced Biometrics", "Centralized Management", "Real-time Tracking"],
             tabs: [
               {
                 id: "biometrie", label: "Biometric Readers",
@@ -649,7 +649,7 @@ const translations = {
           points: [],
           details: {
             mainImage: "/images/service_cyber.png",
-            benefits: ["Risk Audit", "Next-Gen Firewall", "Zero-Trust Security"],
+            avantages: ["Risk Audit", "Next-Gen Firewall", "Zero-Trust Security"],
             tabs: [
               {
                 id: "audit", label: "Audit & Vulnerability",
@@ -674,7 +674,7 @@ const translations = {
           points: [],
           details: {
             mainImage: "/images/service_cloud.png",
-            benefits: ["Total Scalability", "Offsite Backup", "Collaborative Tools"],
+            avantages: ["Total Scalability", "Offsite Backup", "Collaborative Tools"],
             tabs: [
               {
                 id: "architecture", label: "Cloud Architecture",
@@ -699,7 +699,7 @@ const translations = {
           points: ["Digital Marketing", "Graphic Design", "Office Secretariat", "Computer Networking", "Video Surveillance", "Web Development"],
           details: {
             mainImage: "/images/service_audit.png",
-            benefits: ["Expert Advice", "Cost Optimization", "Knowledge Transfer"],
+            avantages: ["Expert Advice", "Cost Optimization", "Knowledge Transfer"],
             tabs: [
               {
                 id: "strategique", label: "Strategic Consulting",
