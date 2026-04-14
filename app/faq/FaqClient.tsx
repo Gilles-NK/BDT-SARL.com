@@ -9,7 +9,7 @@ import { Search, Shield, Settings, BadgeCheck, Wrench, Lock, ChevronDown, Messag
 function Item({ q, a, isOpen, onToggle }: { q: string; a: string; isOpen: boolean; onToggle: () => void }) {
   const ADESSO_BLUE = "#0066ff";
   const NAVY = "#1a1a2e";
-  
+
   return (
     <div className="faq-item" style={{
       border: isOpen ? `2px solid ${ADESSO_BLUE}` : "1px solid #f1f5f9",
@@ -99,8 +99,8 @@ export default function FaqClient() {
       {/* ─── HERO SECTION ─── */}
       <section style={{ position: "relative", height: "580px", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
         <div style={{ position: "absolute", inset: 0 }}>
-          <Image src="/images/6.jpg" alt="FAQ BDT" fill style={{ objectFit: "cover", objectPosition: "center 40%" }} priority />
-          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(8, 16, 52, 0.9), rgba(0, 102, 255, 0.4))" }} />
+          <Image src="/images/40.jpg" alt="FAQ BDT" fill style={{ objectFit: "cover", objectPosition: "center 40%" }} priority />
+          <div style={{ position: "absolute", inset: 0, backdropFilter: "blur(4px)", background: "rgba(0, 0, 0, 0.25)" }} />
         </div>
 
         <div style={{ position: "relative", zIndex: 2, textAlign: "center", padding: "0 2rem", width: "100%", maxWidth: "800px" }}>

@@ -132,7 +132,7 @@ export default function ServiceDetailClient({ id }: { id: string }) {
                         ))}
                       </ul>
                     </div>
-                    
+
                     <div className="extra-box engagement">
                       <h4 className="extra-title highlight">{details.trainingMeta?.engagementTitle}</h4>
                       <div className="engagement-grid">
@@ -157,7 +157,7 @@ export default function ServiceDetailClient({ id }: { id: string }) {
                       {langue === 'fr' ? 'Compétences & Thèmes de Formation' : 'Skills & Training Topics'}
                     </h3>
                   </div>
-                  
+
                   <div className="tags-mosaic">
                     {service.points.map((p, i) => (
                       <div key={i} className="skill-pill">
@@ -227,8 +227,9 @@ export default function ServiceDetailClient({ id }: { id: string }) {
         @keyframes kenBurnsEffect { from { transform: scale(1); } to { transform: scale(1.15); } }
         .hero-overlay {
           position: absolute; inset: 0;
-          background: linear-gradient(to bottom, rgba(8,16,52,0.85), rgba(8,16,52,0.6), rgba(8,16,52,0.9));
-          zIndex: 1;
+          backdrop-filter: blur(4px);
+          background: rgba(0, 0, 0, 0.3);
+          z-index: 1;
         }
         .hero-content { position: relative; z-index: 2; text-align: center; font-family: 'Ubuntu', sans-serif; }
         .hero-title { color: #fff; font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 800; text-transform: uppercase; }
@@ -407,6 +408,12 @@ export default function ServiceDetailClient({ id }: { id: string }) {
           .price-box { text-align: center; }
           .price-item { justify-content: center; }
           .training-extra-sections { grid-template-columns: 1fr; }
+
+          .service-image-box { height: 250px; }
+          .navigation-tabs { flex-direction: column; background: #fff; }
+          .tab-btn { border-top: none; border-left: 3px solid transparent; text-align: left; padding: 15px 20px; border-bottom: 1px solid #f1f5f9; }
+          .tab-btn.is-active { border-top: none; border-left: 3px solid #0066ff; background: #f8fafc; }
+          
         }
 
         /* MOSAIC TAGS SECTION */
@@ -502,8 +509,10 @@ export default function ServiceDetailClient({ id }: { id: string }) {
         .phone-stack { display: flex; flex-direction: column; gap: 5px; }
 
         @media (max-width: 991px) {
-          .split-layout-section { background: #ffffff; flex-direction: column; }
-          .sidebar-area { background: #f4f7f9; }
+          .split-layout-section { background: #ffffff; }
+          .sidebar-area { background: #f4f7f9; padding: 40px 20px; }
+          .main-content-area { padding: 40px 20px; }
+          .hero-section { height: 400px; }
         }
       `}</style>
     </div>

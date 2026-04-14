@@ -92,15 +92,19 @@ export default function ContactClient() {
         justifyContent: "center",
         background: "#fdfdfd"
       }}>
-        <div style={{ position: "absolute", inset: 0 }}>
+        <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
           <Image
-            src="/images/19.jpg"
+            src="/images/39.jpg"
             alt="Contact BDT"
             fill
-            style={{ objectFit: "cover", objectPosition: "center 20%" }}
+            style={{
+              objectFit: "cover",
+              objectPosition: "center 20%",
+              filter: "blur(4px)",
+              transform: "scale(1.05)"
+            }}
             priority
           />
-          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(26, 26, 46, 0.8), rgba(0, 102, 255, 0.4))" }} />
         </div>
 
         <div style={{ position: "relative", zIndex: 2, textAlign: "center", padding: "0 2rem" }}>
@@ -290,7 +294,7 @@ export default function ContactClient() {
         }
       `}} />
 
-      <ContactChoiceModal 
+      <ContactChoiceModal
         isOpen={etat === "choix"}
         onClose={() => setEtat("idle")}
         onSelect={envoyer}

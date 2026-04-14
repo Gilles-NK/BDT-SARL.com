@@ -6,7 +6,7 @@ import { useLangue } from "../../lib/LangueContext";
 
 const SLIDES = [
   {
-    img: "/images/15.jpg",
+    img: "/images/46.jpg",
     alt: "À propos de BDT",
     tagFr: "À propos · Notre histoire",
     tagEn: "About us · Our story",
@@ -18,7 +18,7 @@ const SLIDES = [
     cta2: { fr: "Contactez-nous", en: "Contact us", href: "/contact" },
   },
   {
-    img: "/images/6.jpg",
+    img: "/images/42.jpg",
     alt: "Nos services BDT",
     tagFr: "Nos Services · Solutions sur mesure",
     tagEn: "Our Services · Tailor-made solutions",
@@ -30,7 +30,7 @@ const SLIDES = [
     cta2: { fr: "Demandez un devis", en: "Get a quote", href: "/devis" },
   },
   {
-    img: "/images/19.jpg",
+    img: "/images/45.jpg",
     alt: "Contactez BDT",
     tagFr: "Contact · Parlons de votre projet",
     tagEn: "Contact · Let's talk about your project",
@@ -93,17 +93,18 @@ export default function Hero() {
         }}>
           <Image
             src={s.img} alt={s.alt}
-            fill priority quality={95} sizes="100vw"
-            style={{ objectFit: "cover", objectPosition: "center" }}
+            fill priority quality={100} unoptimized={true}
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+              filter: "blur(0px)",
+              transform: "scale(1.03)"
+            }}
           />
         </div>
       ))}
 
-      {/* ── Overlay ── */}
-      <div style={{
-        position: "absolute", inset: 0, zIndex: 1,
-        background: "linear-gradient(100deg, rgba(8,16,52,0.88) 0%, rgba(8,16,52,0.58) 50%, rgba(8,16,52,0.08) 100%)",
-      }} />
+      {/* ── Overlay supprimé pour plus de clarté ── */}
 
       {/* ── Contenu ── */}
       <div key={animKey} style={{
