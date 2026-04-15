@@ -312,12 +312,31 @@ const translations = {
       sousTitre: "BDT, une équipe basée à Douala spécialisée en sécurité et informatique.",
       tagHistoire: "Notre histoire",
       titreHistoire: "BDT est né d'un constat simple",
-      texte1: "Beaucoup d'entreprises à Douala avaient des problèmes de sécurité sans prestataire fiable sur qui compter durablement. Bron Digital Technology SARL a été créé pour changer ça.",
-      texte2: "Aujourd'hui on accompagne des hôtels, entreprises, écoles et particuliers à Douala et dans plusieurs villes du Cameroun.",
-      tagComp: "Compétences",
-      titreComp: "Nos domaines d'intervention",
-      tagValeurs: "Ce en quoi on croit",
-      titreValeurs: "Nos valeurs",
+      introDetail: {
+        surtitre: "À PROPOS DE",
+        titre: "BDT – Bron Digital Technology SARL",
+        description: "BDT est une entreprise dynamique spécialisée dans les technologies de sécurité et les solutions informatiques intégrées. Depuis sa création, notre mission est d’accompagner les particuliers, les entreprises et les institutions dans la protection de leurs biens, de leurs données et de leurs infrastructures technologiques.\n\nChez BDT, nous nous engageons à protéger ce qui compte le plus pour vous : vos actifs, vos données et votre technologie. Nous travaillons en partenariat avec des particuliers, des entreprises et des institutions pour offrir des solutions de sécurité et d’informatique sur mesure. Notre équipe qualifiée utilise des équipements à la fine pointe de la technologie et une approche axée sur les résultats pour assurer une protection fiable et durable. De la vidéosurveillance à la cybersécurité en passant par les systèmes de maison intelligente, nous offrons des services complets conçus pour sécuriser, optimiser et élever votre environnement technologique. Votre sécurité est notre priorité !",
+        garantie: "Nous assurons un service après-vente d'exception incluant une garantie de suivi de 5 mois gratuit après chaque installation, pour vous assurer une tranquillité d'esprit totale.",
+        listeTitre: "Nos services sont les suivants :",
+        services: [
+          "Vidéosurveillance",
+          "Maintenance IT",
+          "Cybersécurité",
+          "Contrôle d'accès",
+          "Cloud & Solutions digitales",
+          "Formation & Audit"
+        ]
+      },
+      gallery: {
+        tag: "Crédibilité & Expertise",
+        titre: "Découvrez notre univers",
+        desc: "Plongez au cœur de notre activité à travers ces trois piliers qui font notre force.",
+        items: [
+          { id: "materiel", titre: "Notre Matériel", desc: "Équipements de pointe issus des meilleurs constructeurs mondiaux.", btn: "Voir le matériel" },
+          { id: "equipe", titre: "Notre Équipe", desc: "Des experts passionnés et certifiés à votre service 24h/7.", btn: "Rencontrer l'équipe" },
+          { id: "installations", titre: "Nos Installations", desc: "Aperçu de nos réalisations sur le terrain chez nos clients.", btn: "Voir les réalisations" }
+        ]
+      },
       cta: "Vous voulez travailler avec nous ?",
       ctaSub: "Dites-nous ce que vous avez en tête.",
       btnDevis: "Demander un devis",
@@ -797,12 +816,31 @@ const translations = {
       sousTitre: "BDT, a team based in Douala specialized in security and IT.",
       tagHistoire: "Our story",
       titreHistoire: "BDT was born from a simple observation",
-      texte1: "Many businesses in Douala had security issues without a reliable long-term service provider. Bron Digital Technology SARL was created to change that.",
-      texte2: "Today we support hotels, companies, schools and individuals in Douala and several cities across Cameroon.",
-      tagComp: "Skills",
-      titreComp: "Our areas of expertise",
-      tagValeurs: "What we believe in",
-      titreValeurs: "Our values",
+      introDetail: {
+        surtitre: "ABOUT",
+        titre: "BDT – Bron Digital Technology SARL",
+        description: "BDT is a dynamic company specializing in security technologies and integrated IT solutions. Since its inception, our mission has been to support individuals, businesses, and institutions in protecting their assets, data, and technological infrastructure.\n\nAt BDT, we are committed to protecting what matters most to you: your assets, your data, and your technology. We work in partnership with individuals, businesses, and institutions to offer tailor-made security and IT solutions. Our qualified team uses state-of-the-art equipment and a results-oriented approach to ensure reliable and lasting protection. From video surveillance to cybersecurity and smart home systems, we offer comprehensive services designed to secure, optimize, and elevate your technological environment. Your security is our priority!",
+        garantie: "We provide exceptional after-sales service including a 5-month free follow-up guarantee after each installation, to ensure your total peace of mind.",
+        listeTitre: "Our services include:",
+        services: [
+          "Video Surveillance",
+          "IT Maintenance",
+          "Cybersecurity",
+          "Access Control",
+          "Cloud & Digital Solutions",
+          "Formation & Audit"
+        ]
+      },
+      gallery: {
+        tag: "Credibility & Expertise",
+        titre: "Discover our world",
+        desc: "Dive into the heart of our activity through these three pillars that make our strength.",
+        items: [
+          { id: "materiel", titre: "Our Equipment", desc: "Cutting-edge equipment from the world's leading manufacturers.", btn: "View equipment" },
+          { id: "equipe", titre: "Our Team", desc: "Passionate and certified experts at your service 24/7.", btn: "Meet the team" },
+          { id: "installations", titre: "Our Installations", desc: "Overview of our field achievements for our clients.", btn: "View achievements" }
+        ]
+      },
       cta: "Want to work with us?",
       ctaSub: "Tell us what you have in mind.",
       btnDevis: "Request a quote",
