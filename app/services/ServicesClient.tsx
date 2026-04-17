@@ -40,17 +40,17 @@ export default function ServicesClient() {
       {/* --- HERO SECTION --- */}
       <section className="hero-section-container">
         <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
-          <Image 
-            src="/images/33.jpg" 
-            alt={sLocal.titre} 
-            fill 
-            style={{ 
-              objectFit: "cover", 
+          <Image
+            src="/images/54.jpg"
+            alt={sLocal.titre}
+            fill
+            style={{
+              objectFit: "cover",
               objectPosition: "center 40%",
               filter: "blur(4px)",
               transform: "scale(1.05)"
-            }} 
-            priority 
+            }}
+            priority
           />
         </div>
 

@@ -94,13 +94,13 @@ export default function ContactClient() {
       }}>
         <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
           <Image
-            src="/images/39.jpg"
+            src="/images/59.jpg"
             alt="Contact BDT"
             fill
             style={{
               objectFit: "cover",
               objectPosition: "center 20%",
-              filter: "blur(4px)",
+              filter: "blur(2px)",
               transform: "scale(1.05)"
             }}
             priority

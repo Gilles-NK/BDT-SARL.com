@@ -42,7 +42,7 @@ export default function AboutClient() {
       <section style={{ position: "relative", height: "clamp(560px, 45vh, 560px)", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
         <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
           <Image
-            src="/images/50.jpg"
+            src="/images/58.jpg"
             alt={c.titre}
             fill
             style={{

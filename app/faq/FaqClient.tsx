@@ -99,7 +99,7 @@ export default function FaqClient() {
       {/* ─── HERO SECTION ─── */}
       <section style={{ position: "relative", height: "580px", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
         <div style={{ position: "absolute", inset: 0 }}>
-          <Image src="/images/40.jpg" alt="FAQ BDT" fill style={{ objectFit: "cover", objectPosition: "center 40%" }} priority />
+          <Image src="/images/57.jpg" alt="FAQ BDT" fill style={{ objectFit: "cover", objectPosition: "center 40%" }} priority />
           <div style={{ position: "absolute", inset: 0, backdropFilter: "blur(4px)", background: "rgba(0, 0, 0, 0.25)" }} />
         </div>
 
