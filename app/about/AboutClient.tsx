@@ -79,7 +79,7 @@ export default function AboutClient() {
 
       {/* INTRO */}
       <section style={{ padding: "0", background: "#fff", position: "relative", overflow: "hidden" }}>
-        <div style={{ maxWidth: 1400, margin: "0 auto" }}>
+        <div className="about-intro-container" style={{ maxWidth: 1400, margin: "0 auto" }}>
           <div className="about-intro-grid" style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", alignItems: "stretch" }}>
 
             {/* Image Column with Fading Effect - Spans full height */}
@@ -288,6 +288,11 @@ export default function AboutClient() {
         }
 
         @media (max-width: 992px) {
+          .about-intro-container {
+            max-width: none !important;
+            width: 100% !important;
+          }
+
           .about-intro-grid { 
             grid-template-columns: 1fr !important;
             padding: 0 !important;
@@ -297,15 +302,13 @@ export default function AboutClient() {
           .about-intro-grid > div:first-child {
             padding: 0 !important;
             display: block !important;
+            width: 100vw !important;
+            margin-left: calc(50% - 50vw) !important;
+            margin-right: calc(50% - 50vw) !important;
           }
 
-          .about-intro-grid > div:first-child .scroll-reveal-container {
-             width: 100% !important;
-             margin: 0 !important;
-          }
-
-          .about-intro-grid > div:first-child .scroll-reveal-container > div {
-             height: 560px !important;
+          .about-intro-grid > div:first-child > div {
+             height: 400px !important;
              width: 100% !important;
              min-height: auto !important;
              border-radius: 0 !important;
