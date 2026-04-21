@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // On utilise l'URL finale, mais Google accepte généralement si le fichier est accessible.
-  const baseUrl = 'https://bdt-sarlcom.vercel.app'
+  const baseUrl = 'https://bdt-sarl.vercel.app'
   const lastModified = new Date()
 
   const routes = [

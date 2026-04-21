@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/private/'],
     },
-    sitemap: 'https://bdt-sarlcom.vercel.app/sitemap.xml',
+    sitemap: 'https://bdt-sarl.vercel.app/sitemap.xml',
   }
 }
