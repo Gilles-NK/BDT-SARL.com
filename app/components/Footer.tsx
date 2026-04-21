@@ -88,7 +88,7 @@ export default function Footer() {
               <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
                 {t.footer.horaires.map((h: string) => <span key={h}>{h}</span>)}
               </div>
-              <Clock size={14} className="accent-icon" />
+              <Clock size={14} className="accent-icon clock-icon" />
             </div>
 
             <nav className="nav-links">
@@ -217,6 +217,9 @@ export default function Footer() {
         .info-item:hover .accent-icon {
           color: #0050d1;
         }
+        .clock-icon {
+          display: none;
+        }
         .accent-icon {
           color: #0066ff;
           flex-shrink: 0;
@@ -313,6 +316,9 @@ export default function Footer() {
           .hours-info {
             text-align: right;
             margin-bottom: 10px;
+          }
+          .clock-icon {
+            display: flex;
           }
 
           /* Nav alignée en bas à droite, sur une ligne comme image 2 */
