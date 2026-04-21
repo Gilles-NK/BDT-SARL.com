@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | BDT – Bron Digital Technology",
   },
   description: "Expert en vidéosurveillance, cybersécurité et maintenance informatique à Douala, Cameroun. BDT (Bron Digital Technology) accompagne entreprises et particuliers avec des solutions sur mesure. Devis gratuit en 24h.",
-  keywords: ["vidéosurveillance Douala", "caméra surveillance Cameroun", "cybersécurité Douala", "maintenance informatique Cameroun", "sécurité électronique Douala", "BDT sécurité"],
+  keywords: ["vidéosurveillance Douala", "caméra surveillance Cameroun", "cybersécurité Douala", "maintenance informatique Cameroun", "sécurité électronique Douala", "formation informatique Douala", "formation cybersécurité Cameroun", "certification informatique Douala", "BDT sécurité"],
   authors: [{ name: "Bron Digital Technology" }],
   creator: "Bron Digital Technology",
   publisher: "Bron Digital Technology",
