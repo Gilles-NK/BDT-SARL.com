@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { Ubuntu } from "next/font/google";
 import { LangueProvider } from "./lib/LangueContext";
@@ -110,6 +111,7 @@ export default function RootLayout({
           <RappelWidget />
         </LangueProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
