@@ -1,11 +1,11 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // On utilise l'URL finale, mais Google accepte généralement si le fichier est accessible.
   const baseUrl = 'https://www.bdt-sarl.com'
   const lastModified = new Date()
 
-  // Routes statiques
-  const staticRoutes = [
+  const routes = [
     '',
     '/about',
     '/services',
@@ -14,27 +14,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/devis',
     '/confidentialite',
     '/mentions-legales',
-  ].map((route) => ({
+    '/services/videosurveillance',
+    '/services/informatique',
+    '/services/acces',
+    '/services/cybersecurite',
+    '/services/cloud',
+    '/services/audit',
+  ]
+
+  return routes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified,
-    changeFrequency: 'monthly' as const,
+    changeFrequency: 'daily',
     priority: route === '' ? 1 : 0.8,
   }))
-
-  // Services dynamiques
-  const services = [
-    'videosurveillance',
-    'informatique',
-    'acces',
-    'cybersecurite',
-    'cloud',
-    'audit',
-  ].map((id) => ({
-    url: `${baseUrl}/services/${id}`,
-    lastModified,
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }))
-
-  return [...staticRoutes, ...services]
 }
