@@ -9,7 +9,7 @@ import RappelWidget from "./components/RappelWidget";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.bdt-sarl.com"),
+  metadataBase: new URL("https://bdt-sarlcom.vercel.app"),
   title: {
     default: "BDT – Vidéosurveillance & Sécurité Informatique à Douala",
     template: "%s | BDT – Bron Digital Technology",
@@ -68,10 +68,10 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "Bron Digital Technology (BDT)",
-              "image": "https://www.bdt-sarl.com/images/logo-slogan.png",
-              "@id": "https://www.bdt-sarl.com",
-              "url": "https://www.bdt-sarl.com",
-              "telephone": "+237699999999", // À vérifier/mettre à jour si possible
+              "image": "https://bdt-sarlcom.vercel.app/images/logo-slogan.png",
+              "@id": "https://bdt-sarlcom.vercel.app",
+              "url": "https://bdt-sarlcom.vercel.app",
+              "telephone": "+237689665893", // À vérifier/mettre à jour si possible
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Douala",
