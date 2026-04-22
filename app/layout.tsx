@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   publisher: "Bron Digital Technology",
   robots: { index: true, follow: true },
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/apple-icon.png", // Next.js cherchera ou générera ce fichier
+    icon: "/images/logo-slogan1.png",
+    shortcut: "/images/logo-slogan1.png",
+    apple: "/images/logo-slogan1.png",
   },
   alternates: {
     canonical: "/",
