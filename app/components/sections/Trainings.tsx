@@ -70,7 +70,7 @@ export default function Trainings() {
       <div className="container" style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 2rem", position: "relative", zIndex: 1 }}>
 
         {/* Header */}
-        <ScrollReveal direction="down">
+        <ScrollReveal direction="up">
           <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
             <p style={{
               color: "var(--blue)",
@@ -172,7 +172,7 @@ export default function Trainings() {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .glass-effect {
           background: rgba(255, 255, 255, 0.4);
           backdrop-filter: blur(16px);

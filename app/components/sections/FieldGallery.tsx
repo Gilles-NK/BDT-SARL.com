@@ -71,7 +71,7 @@ export default function FieldGallery() {
         </ScrollReveal>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .gallery-item:hover {
           transform: translateY(-5px);
         }

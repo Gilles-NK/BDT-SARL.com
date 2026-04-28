@@ -22,7 +22,7 @@ export default function Pricing() {
     <section id="pricing" style={{ padding: "2rem 0 3rem", background: "#ffffff", position: "relative", overflow: "hidden" }}>
       <div className="container" style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 2rem" }}>
 
-        <ScrollReveal direction="down">
+        <ScrollReveal direction="up">
           <div style={{ textAlign: "center", marginBottom: "4rem" }}>
             <h2 style={{ fontSize: "2.5rem", fontWeight: 900, color: "#0d1b2a", marginBottom: "1rem" }}>
               Nos Tarifs <span style={{ color: "var(--blue)" }}>Formations</span>
@@ -182,7 +182,7 @@ export default function Pricing() {
 
       </div>
 
-      <style jsx>{`
+      <style>{`
         .glass-effect {
           background: rgba(255, 255, 255, 0.4);
           backdrop-filter: blur(16px);

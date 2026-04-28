@@ -46,7 +46,7 @@ export default function Temoignages() {
       <div className="container" style={{ maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
 
         {/* En-tête */}
-        <ScrollReveal direction="down">
+        <ScrollReveal direction="up">
           <div style={{ textAlign: "center", marginBottom: "4rem" }}>
             <span style={{
               color: "var(--blue)", fontSize: "0.85rem", fontWeight: 800,
@@ -102,7 +102,7 @@ export default function Temoignages() {
 
       </div>
 
-      <style jsx>{`
+      <style>{`
         .temoignages-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));

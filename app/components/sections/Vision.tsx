@@ -147,7 +147,7 @@ export default function Vision() {
           </div>
         </div>
       </div>
-      <style jsx>{`
+      <style>{`
         @media (max-width: 900px) {
           .mobile-only-title { display: block !important; }
           .desktop-only-title { display: none !important; }

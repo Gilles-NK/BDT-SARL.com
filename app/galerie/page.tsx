@@ -72,7 +72,7 @@ export default function GaleriePage() {
             </Link>
           </ScrollReveal>
 
-          <ScrollReveal direction="down">
+          <ScrollReveal direction="up">
             <h1 style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)", fontWeight: 900, marginBottom: "1.5rem" }}>
               Notre Galerie Terrain
             </h1>
