@@ -114,10 +114,10 @@ export default function Services() {
               const Icon = getIcon(i);
 
               return (
-                <Link 
+                <Link
                   href={`/services/${item.id}`}
-                  key={i} 
-                  className="service-card" 
+                  key={i}
+                  className="service-card"
                   style={{
                     flex: "0 0 280px",
                     padding: "1rem",
@@ -147,7 +147,7 @@ export default function Services() {
                     }}>
                       {item.titre}
                     </h3>
-                    <p style={{ color: "#64748b", fontSize: "0.9rem", lineHeight: 1.6 }}>
+                    <p style={{ color: "#64748b", fontSize: "0.9rem", lineHeight: 1.6, marginBottom: "0.5rem" }}>
                       {item.sousTitre}
                     </p>
                   </div>

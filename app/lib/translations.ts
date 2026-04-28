@@ -35,6 +35,33 @@ const translations = {
         "Spécialistes de la sécurité électronique et de l'informatique au Cameroun, nous accompagnons entreprises, institutions et particuliers avec des solutions sur mesure, rigoureusement déployées et maintenues dans le temps.",
         "Notre réussite se mesure à celle de clients. C'est pourquoi chaque projet est traité avec la même exigence, qu'il s'agisse d'une installation de caméras pour un commerce ou d'un réseau sécurisé pour un grand groupe.",
       ],
+      vision: {
+        titre: "MESSAGE DES PROMOTEURS",
+        promoteurs: [
+          {
+            nom: "ING. Alex Junior Chiedjo",
+            role: "Promoteur & Directeur Général",
+            image: "/images/Alex (1).png",
+            paragraphes: [
+              "Je m’appelle **ING. Alex Junior Chiedjo**.",
+              "**BDT** est né d’une réalité que j’ai observée sur le terrain : trop d’entreprises perdent du **temps**, de l’**argent** et des opportunités à cause de **systèmes mal sécurisés** et d’infrastructures peu fiables.",
+              "J’ai créé BDT avec une ambition claire : apporter des **solutions concrètes**, durables et adaptées aux réalités des **entreprises camerounaises**. Nous intervenons dans la **vidéosurveillance**, les **réseaux**, la **cybersécurité** et le développement de **solutions digitales**.",
+              "Mais au-delà des services, nous avons une autre mission : **transmettre**. À travers nos **formations**, nous préparons une **nouvelle génération** capable de maîtriser les technologies et de répondre aux défis de demain."
+            ]
+          },
+          {
+            nom: "MR. Romaric",
+            role: "Promoteur",
+            image: "/images/Romaric (2).png",
+            paragraphes: [
+              "Je m’appelle **MR. Romaric**.",
+              "Sur le terrain, j’ai constaté une chose simple : beaucoup d’entreprises disposent d’équipements, mais pas toujours des **solutions adaptées** à leurs besoins réels.",
+              "Chez **BDT**, nous faisons le choix de l’**efficacité**. Chaque installation, chaque configuration, chaque intervention est pensée pour résoudre un problème précis et garantir un **fonctionnement fiable** au quotidien.",
+              "De la **vidéosurveillance** à la mise en place de **réseaux performants**, en passant par la **cybersécurité** et l’**accompagnement technique**, nous agissons avec **rigueur** et engagement."
+            ]
+          }
+        ]
+      },
       conclusion: {
         avant: "Avec une équipe d'experts passionnés et des interventions sur",
         lien: "plus de 10 sites stratégiques",
@@ -539,6 +566,33 @@ const translations = {
         "As specialists in electronic security and IT in Cameroon, we support businesses, institutions and individuals with tailored solutions, rigorously deployed and maintained over time.",
         "Our success is measured by that of our clients. That is why every project is handled with the same level of demand, whether it's a camera setup for a shop or a secured network for a large organisation.",
       ],
+      vision: {
+        titre: "MESSAGE FROM THE PROMOTERS",
+        promoteurs: [
+          {
+            nom: "ING. Alex Junior Chiedjo",
+            role: "Promoter & General Manager",
+            image: "/images/Alex.png",
+            paragraphes: [
+              "I am **ING. Alex Junior Chiedjo**.",
+              "**BDT** was born from a reality I observed in the field: too many companies lose **time**, **money**, and opportunities due to **poorly secured systems** and unreliable infrastructures.",
+              "I created BDT with a clear ambition: to provide **concrete solutions**, sustainable and adapted to the realities of **Cameroonian businesses**. We intervene in **video surveillance**, **networks**, **cybersecurity**, and the development of **digital solutions**.",
+              "But beyond services, we have another mission: **to transmit**. Through our **training**, we prepare a **new generation** capable of mastering technologies and meeting tomorrow's challenges."
+            ]
+          },
+          {
+            nom: "MR. Romaric",
+            role: "Promoter",
+            image: "/images/Romaric (2).png",
+            paragraphes: [
+              "I am **MR. Romaric**.",
+              "In the field, I observed one simple thing: many companies have equipment, but not always **tailored solutions** adapted to their real needs.",
+              "At **BDT**, we choose **efficiency**. Every installation, every configuration, every intervention is designed to solve a specific problem and guarantee **reliable operation** day-to-day.",
+              "From **video surveillance** to the implementation of **high-performance networks**, through **cybersecurity** and **technical support**, we act with **rigor** and commitment."
+            ]
+          }
+        ]
+      },
       conclusion: {
         avant: "With a team of passionate experts and operations across",
         lien: "more than 10 strategic sites",

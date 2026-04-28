@@ -7,11 +7,11 @@ const ICONS = [Search, Wrench, CheckCircle, Phone];
 
 export default function PourquoiBDTCompact() {
   const { t, langue } = useLangue();
-  
+
   return (
     <section className="bdt-compact-section">
       <div className="compact-glass-container">
-        
+
         {/* En-tête compact style Adesso */}
         <div className="header-row">
           <h2 className="compact-tag">{t.processus.tag}</h2>
@@ -51,11 +51,19 @@ export default function PourquoiBDTCompact() {
 
       <style jsx>{`
         .bdt-compact-section {
-          padding: 3.5rem 1.5rem;
+          padding: 3rem 1.5rem 6rem; /* Top padding réduit pour fusionner avec la section d'avant */
           display: flex;
           justify-content: center;
-          background: url('images/13.jpg') center/cover no-repeat;
-          min-height: 400px;
+          background: 
+            linear-gradient(to bottom, 
+              #ffffff 0%, 
+              rgba(255, 255, 255, 0) 15%, 
+              rgba(255, 255, 255, 0) 85%, 
+              #ffffff 100%
+            ),
+            url('images/44.jpg') center/cover no-repeat;
+          background-attachment: fixed; /* Effet Parallaxe / Ancrage */
+          min-height: 550px; /* Augmenté de 400px à 550px */
         }
 
         .compact-glass-container {

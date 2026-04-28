@@ -33,7 +33,7 @@ function CountUp({
       ([entry]) => {
         if (!entry.isIntersecting || started.current) return;
         started.current = true;
-        
+
         const t0 = performance.now();
         const tick = (now: number) => {
           const p = Math.min((now - t0) / duration, 1);
@@ -59,179 +59,109 @@ export default function Presentation() {
   const p = t.presentation2;
 
   return (
-    <section style={{
-      padding: "5rem 2rem",
-      background: "#fff",
-      borderBottom: "1px solid var(--gray-100)",
-    }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", flexDirection: "column", gap: "5rem" }}>
+    <>
+      <section style={{
+        padding: "5rem 2rem 2rem",
+        background: "#fff",
+      }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", flexDirection: "column", gap: "3rem" }}>
 
-        {/* ══ BLOC 1 — Titre fort + texte ══════════════════════════════════ */}
-        <div className="pres-adesso-top" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "start" }}>
+          {/* ══ BLOC 1 — Titre fort + texte ══════════════════════════════════ */}
+          <div className="pres-adesso-top" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "start" }}>
 
-          {/* Titre gauche */}
-          <ScrollReveal direction="up" delay={0}>
-            <h2 style={{
-              fontSize: "clamp(2rem, 4vw, 3rem)",
-              fontWeight: 800,
-              lineHeight: 1.15,
-              color: "var(--blue)",
-              margin: 0,
-            }}>
-              {p.titre}
-            </h2>
-          </ScrollReveal>
-
-          {/* Texte droite */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-          {p.paragraphes.map((para: string, i: number) => {
-    const parts = para.split(/(Chez BDT)/g); 
-    return (
-      <ScrollReveal key={i} direction="up" delay={i * 80}>
-        <p style={{
-          fontSize: "1.15rem",
-          lineHeight: 1.8,
-          color: "#000000",
-          margin: 0,
-          textAlign: "justify",
-        }}>
-          {parts.map((part, index) => 
-            part === "Chez BDT" ? (
-              <span key={index} style={{ color: "var(--blue)", fontWeight: 700 }}>
-                {part}
-              </span>
-            ) : (
-              part
-            )
-          )}
-        </p>
-      </ScrollReveal>
-    );
-  })}
-          </div>
-        </div>
-
-        {/* ══ BLOC 2 — Séparateur ══════════════════════════════════════════ */}
-        <ScrollReveal direction="fade" delay={0}>
-          <div style={{ height: 1, background: "var(--gray-200)" }} />
-        </ScrollReveal>
-
-        {/* ══ BLOC 3 — Chiffres clés style Adesso ═════════════════════════ */}
-        <div className="pres-adesso-chiffres">
-          {p.chiffres.map((c: { surtitre: string; valeur: number; prefix?: string; suffix: string; desc: string }, i: number) => (
-            <ScrollReveal key={i} direction="up" delay={i * 90}>
-              <div className="chiffre-card">
-                {/* Surtitre petit gris */}
-                <p className="surtitre">
-                  {c.surtitre}
-                </p>
-
-                {/* Grand chiffre bleu */}
-                <div className="valeur">
-                  <CountUp target={c.valeur} prefix={c.prefix ?? ""} suffix={c.suffix} />
-                </div>
-
-                {/* Description */}
-                <p className="desc">
-                  {c.desc}
-                </p>
-              </div>
+            {/* Titre gauche */}
+            <ScrollReveal direction="up" delay={0}>
+              <h2 style={{
+                fontSize: "clamp(2rem, 4vw, 3rem)",
+                fontWeight: 800,
+                lineHeight: 1.15,
+                color: "var(--blue)",
+                margin: 0,
+              }}>
+                {p.titre}
+              </h2>
             </ScrollReveal>
-          ))}
-        </div>
 
-        {/* ══ BLOC 3.5 — Texte de conclusion avec lien style Adesso ══════ */}
-        <ScrollReveal direction="up" delay={300}>
-          <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
-            <p style={{
-              fontSize: "1.1rem",
-              lineHeight: 1.7,
-              color: "#000000",
-              maxWidth: 800,
-              margin: "0 auto",
-              textAlign: "center",
+            {/* Texte droite */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+              {p.paragraphes.map((para: string, i: number) => {
+                const parts = para.split(/(Chez BDT)/g);
+                return (
+                  <ScrollReveal key={i} direction="up" delay={i * 80}>
+                    <p style={{
+                      fontSize: "1.15rem",
+                      lineHeight: 1.8,
+                      color: "#000000",
+                      margin: 0,
+                      textAlign: "justify",
+                    }}>
+                      {parts.map((part, index) =>
+                        part === "Chez BDT" ? (
+                          <span key={index} style={{ color: "var(--blue)", fontWeight: 700 }}>
+                            {part}
+                          </span>
+                        ) : (
+                          part
+                        )
+                      )}
+                    </p>
+                  </ScrollReveal>
+                );
+              })}
+            </div>
+          </div>
+
+
+          {/* ══ BLOC 3 — Chiffres clés style Adesso ═════════════════════════ */}
+          <div className="pres-adesso-chiffres">
+            {p.chiffres.map((c: { surtitre: string; valeur: number; prefix?: string; suffix: string; desc: string }, i: number) => (
+              <ScrollReveal key={i} direction="up" delay={i * 90}>
+                <div className="chiffre-card">
+                  {/* Surtitre petit gris */}
+                  <p className="surtitre">
+                    {c.surtitre}
+                  </p>
+
+                  {/* Grand chiffre bleu */}
+                  <div className="valeur">
+                    <CountUp target={c.valeur} prefix={c.prefix ?? ""} suffix={c.suffix} />
+                  </div>
+
+                  {/* Description */}
+                  <p className="desc">
+                    {c.desc}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          {/* ══ BLOC 4 — Texte d'engagement Style Screenshot (Version Épurée) ══════════════════ */}
+          <div style={{ 
+            marginTop: "1rem", 
+            marginBottom: "5rem",
+            textAlign: "center", 
+            padding: "0 1.5rem" 
+          }}>
+            <p style={{ 
+              margin: "0 auto", 
+              maxWidth: "850px",
+              fontSize: "1.25rem", 
+              lineHeight: "1.8", 
+              color: "#0f172a",
+              fontWeight: 400,
+              fontFamily: "'Ubuntu', sans-serif"
             }}>
-              {p.conclusion.avant}{" "}
-              <Link
-                href={`/contact`}
-                style={{
-                  color: "var(--blue)",
-                  textDecoration: "none",
-                  fontWeight: 700,
-                  borderBottom: "2px solid var(--blue)",
-                  paddingBottom: "1px",
-                  transition: "opacity 0.15s",
-                }}
-                onMouseEnter={e => (e.currentTarget as HTMLElement).style.opacity = "0.7"}
-                onMouseLeave={e => (e.currentTarget as HTMLElement).style.opacity = "1"}
-              >
-                {p.conclusion.lien}
+              Avec une équipe d'experts passionnés et des interventions sur{" "}
+              <Link href="/contact" style={{ color: "#0066ff", fontWeight: 700, textDecoration: "underline" }}>
+                plus de 10 sites stratégiques
               </Link>{" "}
-              {p.conclusion.apres}
+              au Cameroun, BDT s'impose comme un partenaire de confiance en sécurité électronique et informatique. 
+              Nous œuvrons chaque jour à la réussite des projets de nos clients.
             </p>
           </div>
-        </ScrollReveal>
-
-        {/* ══ BLOC 4 — CTA avec image de fond floutée ════════════════════════ */}
-        <ScrollReveal direction="up" delay={0}>
-          <div className="pres-cta" style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: "2rem",
-            flexWrap: "wrap",
-            padding: "2rem 2.5rem",
-            border: "1px solid var(--gray-200)",
-            borderRadius: "var(--radius-lg)",
-            position: "relative",
-            overflow: "hidden",
-          }}>
-            {/* Image de fond floutée */}
-            <div style={{
-              position: "absolute",
-              inset: 0,
-              backgroundImage: "url('/images/1.jpg')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              filter: "blur(3px)",
-              transform: "scale(1.06)",
-            }} />
-            {/* Overlay blanc semi-transparent pour lisibilité */}
-            <div style={{
-              position: "absolute",
-              inset: 0,
-              background: "rgba(255, 255, 255, 0.65)",
-            }} />
-
-            {/* Contenu au-dessus */}
-            <div style={{ position: "relative", zIndex: 1 }}>
-              <p style={{ fontSize: "1.05rem", fontWeight: 700, color: "var(--gray-900)", margin: "0 0 0.3rem" }}>
-                {p.cta.titre}
-              </p>
-              <p style={{ fontSize: "0.88rem", color: "var(--gray-600)", margin: 0 }}>
-                {p.cta.desc}
-              </p>
-            </div>
-            <div style={{ position: "relative", zIndex: 1, display: "flex", gap: "0.75rem", flexShrink: 0, flexWrap: "wrap" }}>
-              <Link href={`/services`}
-                style={{ padding: "0.7rem 1.4rem", background: "var(--blue)", color: "#fff", fontWeight: 700, fontSize: "0.88rem", borderRadius: "var(--radius)", textDecoration: "none", transition: "opacity 0.2s" }}
-                onMouseEnter={e => (e.currentTarget as HTMLElement).style.opacity = "0.85"}
-                onMouseLeave={e => (e.currentTarget as HTMLElement).style.opacity = "1"}>
-                {p.cta.btnServices}
-              </Link>
-              <Link href={`/devis`}
-                style={{ padding: "0.7rem 1.4rem", background: "transparent", color: "var(--blue)", fontWeight: 700, fontSize: "0.88rem", borderRadius: "var(--radius)", border: "1.5px solid var(--blue)", textDecoration: "none", transition: "background 0.2s" }}
-                onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = "var(--blue-lt)"}
-                onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = "transparent"}>
-                {p.cta.btnDevis}
-              </Link>
-            </div>
-          </div>
-        </ScrollReveal>
-
-
-      </div>
-
+        </div>
+      </section>
       {/* ── Styles Minimalistes Centrés ────────────────────────────────────── */}
       <style>{`
         /* ── Grille desktop : 4 colonnes égales ── */
@@ -239,6 +169,7 @@ export default function Presentation() {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           gap: 0;
+          border-top: none; /* Supprime la ligne du haut */
         }
 
         /* ── Chaque bloc chiffre ── */
@@ -347,8 +278,37 @@ export default function Presentation() {
             justify-content: center !important; 
             width: 100% !important;
           }
+
+          .vision-section {
+            grid-template-columns: 1fr !important;
+            padding: 2.5rem 1rem !important;
+            gap: 2rem !important;
+            text-align: center !important;
+          }
+          .vision-section div:first-child {
+            padding-right: 0 !important;
+          }
+          .vision-section div:last-child {
+            align-items: center !important;
+          }
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+          animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes slideUp {
+          from { opacity: 0; transform: translateY(40px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slide-up {
+          animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         }
       `}</style>
-    </section>
+    </>
   );
 }

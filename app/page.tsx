@@ -17,37 +17,68 @@
 //  └─────────────────────┴───────────────────────────────────┘
 // ═══════════════════════════════════════════════════════════════
 
-import Hero         from "./components/sections/Hero";
+import Hero from "./components/sections/Hero";
 import Presentation from "./components/sections/Presentation";
-import Services     from "./components/sections/Services";
-import Processus    from "./components/sections/Processus";
+import Services from "./components/sections/Services";
+import Processus from "./components/sections/Processus";
 import ContactSection from "./components/ContactSection";
-import Temoignages  from "./components/sections/Temoignages";
-import CtaFinal     from "./components/sections/CtaFinal";
+import Temoignages from "./components/sections/Temoignages";
+import CtaFinal from "./components/sections/CtaFinal";
+import Vision from "./components/sections/Vision";
+import FieldGallery from "./components/sections/FieldGallery";
+import Trainings from "./components/sections/Trainings";
+import Pricing from "./components/sections/Pricing";
 import { Metadata } from "next";
 
 export default function Home() {
   return (
-    <div>
-      {/* a. Bannière principale avec diaporama */}
+    <div style={{ background: "#fff" }}>
+      {/* 1. L'ACCROCHE : Qui nous sommes en 3 secondes */}
       <Hero />
 
-      {/* b. Présentation rapide — 4 points forts */}
-      <Presentation />
+      {/* Barre d'info SEO Glassmorphism (Déplacée ici) */}
+      <div style={{ 
+        background: "rgba(255, 255, 255, 0.7)", 
+        backdropFilter: "blur(10px)",
+        WebkitBackdropFilter: "blur(10px)",
+        color: "var(--blue)", 
+        padding: "1rem", 
+        textAlign: "center", 
+        fontSize: "clamp(0.8rem, 2.5vw, 0.95rem)", 
+        fontWeight: 700,
+        letterSpacing: "0.5px",
+        textTransform: "uppercase",
+        position: "relative",
+        zIndex: 5
+      }}>
+        Vidéosurveillance, réseaux, cybersécurité et formations professionnelles au Cameroun.
+      </div>
 
-      {/* c. Services principaux — grille 2×2 */}
+      {/* 2. L'OFFRE : Ce que nous faisons (Succinct) */}
       <Services />
 
-      {/* d. Zone de confiance — 4 étapes clé en main */}
+      {/* 3. LA CRÉDIBILITÉ : Nos chiffres et notre ADN */}
+      <Presentation />
+
+      {/* 4. LA CONFIANCE HUMAINE : Le message des promoteurs (DÉPLACÉ ICI) */}
+      <Vision />
+
+      {/* 5. LA PREUVE : Nos travaux réels sur le terrain */}
+      <FieldGallery />
+
+      {/* 6. L'EXPERTISE TRANSMISE : Formations et Avenir */}
+      <Trainings />
+
+      {/* 6.5 TARIFS : Grille tarifaire des formations */}
+      <Pricing />
+
+      {/* 7. LA MÉTHODE : Comment nous travaillons (4 étapes) */}
       <Processus />
 
-      {/* e. Nos partenaires — logos clients */}
-      <ContactSection />
-
-      {/* f. Témoignages — avis clients carousel */}
+      {/* 8. LA PREUVE SOCIALE : Ce que disent nos clients */}
       <Temoignages />
 
-      {/* g. Appel à l'action final */}
+      {/* 9. L'ACTION : Conversion finale */}
       <CtaFinal />
 
       {/* Styles responsive pour les grilles de la page */}

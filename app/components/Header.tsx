@@ -103,11 +103,10 @@ export default function Header() {
               }} />
           </Link>
 
-          <div className="sep-v" style={{ width: 1, height: 50, background: "#e5e7eb", margin: "0 1.5rem", flexShrink: 0 }} />
-          <div style={{ flexGrow: 1 }} />
+          <div style={{ flex: 1 }} />
 
-          {/* Nav desktop */}
-          <nav className="nav-desktop" style={{ display: "flex", alignItems: "center", height: "80px" }}>
+          {/* Nav desktop centrée */}
+          <nav className="nav-desktop" style={{ display: "flex", alignItems: "center", height: "80px", justifyContent: "center" }}>
 
             {/* Liens nav */}
             {NAV_ITEMS.map(item => {
@@ -138,7 +137,7 @@ export default function Header() {
               );
             })}
 
-            {/* Bouton Recherche — ouvre la modale */}
+            {/* Bouton Recherche */}
             <button onClick={() => setSearchOpen(true)} aria-label={t.nav.recherche}
               style={{
                 display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.4rem",
@@ -160,16 +159,18 @@ export default function Header() {
               <Search size={20} strokeWidth={1.3} />
               <span style={{ fontSize: "0.75rem", fontWeight: 400, letterSpacing: "0.04em", textTransform: "uppercase", lineHeight: 1, whiteSpace: "nowrap" }}>{t.nav.recherche}</span>
             </button>
+          </nav>
 
-            <div style={{ width: 1, height: 32, background: "#e5e7eb", margin: "0 1rem" }} />
+          <div style={{ flex: 1 }} />
 
-            {/* Switch langue */}
+          {/* Actions à droite (Langue) */}
+          <div className="nav-actions" style={{ display: "flex", alignItems: "center" }}>
             <div style={{ display: "flex", gap: "0.1rem", alignItems: "center", transform: "translateY(-4px)" }}>
               <button onClick={() => changeLang("fr")} style={styleLang("fr")}>fr</button>
               <span style={{ color: "#d1d5db", fontSize: "0.82rem" }}>|</span>
               <button onClick={() => changeLang("en")} style={styleLang("en")}>en</button>
             </div>
-          </nav>
+          </div>
 
           {/* Burger mobile */}
           <button className="burger-btn" onClick={() => setMenuOpen(true)} aria-label="Menu"
@@ -342,9 +343,8 @@ export default function Header() {
 
       <style>{`
         @media (max-width: 900px) {
-          .nav-desktop { display: none !important; }
-          .sep-v        { display: none !important; }
-          .burger-btn   { display: flex !important; }
+          .nav-desktop, .nav-actions, .sep-v { display: none !important; }
+          .burger-btn { display: flex !important; }
         }
       `}</style>
     </>

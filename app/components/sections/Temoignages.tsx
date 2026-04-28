@@ -1,135 +1,232 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import ScrollReveal from "../ScrollReveal";
-import { Star } from "lucide-react"; // Utilisation de lucide-react pour la cohérence
 import { useLangue } from "../../lib/LangueContext";
 
 export default function Temoignages() {
-  const [actif, setActif] = useState(0);
   const { t } = useLangue();
-  const items = t.temoignages.items;
-  const item  = items[actif];
+
+  // On garde les 3 premiers avis pour l'instant (retirez le .slice(0,3) le jour où vous en voulez plus)
+  const items = t.temoignages.items.slice(0, 3);
+
+  // Photos de profil fictives pour l'exemple (à remplacer par de vraies photos dans translations.ts si besoin)
+  const defaultAvatars = [
+    "/images/Serena.jpg", // Vous pourrez utiliser de vraies photos
+    "/images/Faya.jpg",
+    "/images/Aston.jpg"
+  ];
 
   return (
-    <section style={{ padding: "3.5rem 2rem", background: "var(--gray-50)" }}>
-      <div style={{ maxWidth: 800, margin: "0 auto" }}>
-        
-        {/* En-tête réduit */}
-        <ScrollReveal direction="up">
-          <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
-            <span style={{ 
-              color: "#0066ff", fontSize: "0.75rem", fontWeight: 800, 
-              textTransform: "uppercase", letterSpacing: "0.15em", display: "block", marginBottom: "0.75rem" 
+    <section style={{ padding: "6rem 2rem", background: "#ffffff", position: "relative", overflow: "hidden" }}>
+
+      {/* Décoration d'arrière-plan pour rendre le Glassmorphism visible */}
+      <div style={{
+        position: "absolute",
+        top: "20%",
+        left: "10%",
+        width: "300px",
+        height: "300px",
+        background: "rgba(0, 118, 206, 0.08)",
+        filter: "blur(80px)",
+        borderRadius: "50%",
+        zIndex: 0
+      }} />
+      <div style={{
+        position: "absolute",
+        bottom: "10%",
+        right: "5%",
+        width: "400px",
+        height: "400px",
+        background: "rgba(209, 213, 219, 0.4)",
+        filter: "blur(100px)",
+        borderRadius: "50%",
+        zIndex: 0
+      }} />
+
+      <div className="container" style={{ maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+
+        {/* En-tête */}
+        <ScrollReveal direction="down">
+          <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+            <span style={{
+              color: "var(--blue)", fontSize: "0.85rem", fontWeight: 800,
+              textTransform: "uppercase", letterSpacing: "2px", display: "block", marginBottom: "1rem"
             }}>
               {t.temoignages.tag}
             </span>
-            <h2 style={{ 
-              fontFamily: "Ubuntu, sans-serif", fontWeight: 800, 
-              fontSize: "clamp(1.5rem, 2.8vw, 2rem)", color: "#0d1b2a", 
-              marginTop: "0.5rem", marginBottom: "0.5rem" 
+            <h2 style={{
+              fontWeight: 900,
+              fontSize: "clamp(2rem, 4vw, 2.5rem)", color: "#0d1b2a",
+              marginBottom: "1rem"
             }}>
               {t.temoignages.titre}
             </h2>
-            <p style={{ color: "var(--gray-600)", fontSize: "0.95rem" }}>{t.temoignages.sousTitre}</p>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal direction="up" delay={80}>
-          {/* Étoiles */}
-          <div style={{ display: "flex", justifyContent: "center", gap: 3, marginBottom: "1.25rem" }}>
-            {[...Array(5)].map((_, i) => <Star key={i} size={16} color="#D4AF37" fill="#D4AF37" />)}
-          </div>
-
-          {/* Carte de témoignage plus compacte */}
-          <div style={{ 
-            background: "#fff", 
-            padding: "2rem", 
-            borderRadius: 14, 
-            boxShadow: "0 10px 30px rgba(0,0,0,0.05)", 
-            border: "1px solid var(--gray-200)", 
-            borderTop: "3px solid #0066ff", 
-            position: "relative" 
-          }}>
-            <span style={{ 
-              position: "absolute", top: -10, left: 20, fontSize: "4rem", 
-              color: "rgba(0, 102, 255, 0.1)", fontFamily: "Georgia, serif", 
-              lineHeight: 1, userSelect: "none" 
-            }}>
-              &ldquo;
-            </span>
-            <p style={{ 
-              fontSize: "0.98rem", color: "#475569", lineHeight: 1.7, 
-              marginBottom: "1.5rem", position: "relative", zIndex: 1, 
-              fontStyle: "italic", textAlign: "center" 
-            }}>
-              {item.texte}
+            <p style={{ color: "var(--gray-600)", fontSize: "1.1rem", maxWidth: "600px", margin: "0 auto" }}>
+              {t.temoignages.sousTitre}
             </p>
-            
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.8rem" }}>
-              <div style={{ 
-                width: 40, height: 40, background: "linear-gradient(135deg, #0066ff, #0052cc)", 
-                borderRadius: 8, display: "flex", alignItems: "center", 
-                justifyContent: "center", color: "#fff", fontFamily: "Ubuntu, sans-serif", 
-                fontWeight: 700, flexShrink: 0, fontSize: "1rem" 
-              }}>
-                {item.nom.charAt(0)}
-              </div>
-              <div>
-                <div style={{ fontWeight: 700, color: "#0d1b2a", fontSize: "0.9rem" }}>{item.nom}</div>
-                <div style={{ color: "#64748b", fontSize: "0.78rem" }}>{item.role}</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Pagination plus fine */}
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem", marginTop: "1.75rem" }}>
-            <button 
-              onClick={() => setActif(a => (a - 1 + items.length) % items.length)} 
-              style={{ 
-                width: 36, height: 36, borderRadius: "50%", border: "1px solid var(--gray-200)", 
-                background: "#fff", cursor: "pointer", display: "flex", alignItems: "center", 
-                justifyContent: "center", color: "#64748b", transition: "all 0.2s" 
-              }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#0066ff"; (e.currentTarget as HTMLElement).style.color = "#fff"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "#fff"; (e.currentTarget as HTMLElement).style.color = "#64748b"; }}
-            >
-              ❮
-            </button>
-            
-            <div style={{ display: "flex", gap: 5 }}>
-              {items.map((_, i) => (
-                <button 
-                  key={i} 
-                  onClick={() => setActif(i)} 
-                  style={{ 
-                    width: i === actif ? 18 : 6, 
-                    height: 6, 
-                    borderRadius: 3, 
-                    border: "none", 
-                    background: i === actif ? "#0066ff" : "#cbd5e1", 
-                    cursor: "pointer", 
-                    transition: "all 0.3s", 
-                    padding: 0 
-                  }} 
-                />
-              ))}
-            </div>
-
-            <button 
-              onClick={() => setActif(a => (a + 1) % items.length)} 
-              style={{ 
-                width: 36, height: 36, borderRadius: "50%", border: "1px solid var(--gray-200)", 
-                background: "#fff", cursor: "pointer", display: "flex", alignItems: "center", 
-                justifyContent: "center", color: "#64748b", transition: "all 0.2s" 
-              }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#0066ff"; (e.currentTarget as HTMLElement).style.color = "#fff"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "#fff"; (e.currentTarget as HTMLElement).style.color = "#64748b"; }}
-            >
-              ❯
-            </button>
           </div>
         </ScrollReveal>
+
+        {/* Mur de Confiance : Grille de 3 cartes */}
+        <div className="temoignages-grid">
+          {items.map((item: any, i: number) => (
+            <ScrollReveal key={i} direction="up" delay={i * 100}>
+              <div className="review-card glass-effect">
+
+                {/* Icône de citation subtile */}
+                <span className="quote-icon">&quot;</span>
+
+                {/* Texte de l'avis */}
+                <p className="review-text">
+                  {item.texte}
+                </p>
+
+                {/* Profil du client */}
+                <div className="client-profile">
+                  <div className="client-image-wrapper">
+                    <img
+                      src={item.image || defaultAvatars[i % 3]}
+                      alt={`Client ${item.nom}`}
+                      className="client-image"
+                    />
+                  </div>
+                  <div className="client-info">
+                    <div className="client-name">{item.nom}</div>
+                    <div className="client-role">{item.role}</div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+
       </div>
+
+      <style jsx>{`
+        .temoignages-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 2rem;
+          justify-content: center;
+        }
+
+        @media (max-width: 650px) {
+          .temoignages-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 0.75rem !important;
+          }
+          .temoignage-card {
+            padding: 1.2rem 1rem !important;
+          }
+          .review-text {
+            font-size: 0.75rem !important;
+            line-height: 1.4 !important;
+            margin-bottom: 1rem !important;
+          }
+          .client-image-wrapper {
+            width: 35px !important;
+            height: 35px !important;
+          }
+          .client-name {
+            font-size: 0.7rem !important;
+          }
+          .client-role {
+            font-size: 0.6rem !important;
+          }
+        }
+
+        .glass-effect {
+          /* Effet Transparent / Glassmorphism */
+          background: rgba(255, 255, 255, 0.4);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border: 1px solid rgba(255, 255, 255, 0.8);
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+          border-radius: 16px;
+          padding: 2.5rem 2rem;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .glass-effect:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 40px rgba(0, 118, 206, 0.08);
+          border-color: rgba(0, 118, 206, 0.3);
+          background: rgba(255, 255, 255, 0.6);
+        }
+
+        .quote-icon {
+          position: absolute;
+          top: 1rem;
+          right: 1.5rem;
+          font-size: 5rem;
+          font-family: Georgia, serif;
+          color: rgba(0, 118, 206, 0.06);
+          line-height: 1;
+          user-select: none;
+        }
+
+        .review-text {
+          font-size: 1.05rem;
+          color: #334155;
+          line-height: 1.7;
+          margin-bottom: 2.5rem;
+          position: relative;
+          z-index: 1;
+          flex-grow: 1;
+        }
+
+        .client-profile {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          border-top: 1px solid rgba(0, 0, 0, 0.04);
+          padding-top: 1.5rem;
+        }
+
+        .client-image-wrapper {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          overflow: hidden;
+          flex-shrink: 0;
+          border: 2px solid #ffffff;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .client-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .client-name {
+          font-weight: 800;
+          color: #0d1b2a;
+          font-size: 1rem;
+          margin-bottom: 2px;
+        }
+
+        .client-role {
+          color: #64748b;
+          font-size: 0.85rem;
+        }
+
+        @media (max-width: 992px) {
+          .temoignages-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 650px) {
+          .temoignages-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
     </section>
   );
 }
