@@ -17,6 +17,7 @@
 //  └─────────────────────┴───────────────────────────────────┘
 // ═══════════════════════════════════════════════════════════════
 
+/** BDT SARL - Version Finale 2.0 **/
 import Hero from "./components/sections/Hero";
 import Presentation from "./components/sections/Presentation";
 import Services from "./components/sections/Services";
