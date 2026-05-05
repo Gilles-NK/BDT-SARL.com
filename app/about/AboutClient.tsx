@@ -105,7 +105,7 @@ export default function AboutClient() {
             {/* Text Column */}
             <ScrollReveal direction="right">
               <div className="about-text-column" style={{ padding: "6rem 4rem 6rem 2rem", display: "flex", flexDirection: "column" }}>
-                <p style={{ color: "#0066ff", fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.1em", marginBottom: "0.5rem", textTransform: "uppercase" }}>
+                <p style={{ color: "#1b439e", fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.1em", marginBottom: "0.5rem", textTransform: "uppercase" }}>
                   {c.introDetail.surtitre}
                 </p>
                 <h2 style={{ fontFamily: "Ubuntu, sans-serif", fontWeight: 800, fontSize: "clamp(1.8rem, 3vw, 2.5rem)", color: "#1a1a2e", marginBottom: "0.8rem" }}>
@@ -114,7 +114,7 @@ export default function AboutClient() {
 
                 {/* Decorative bars back again */}
                 <div style={{ display: "flex", gap: "6px", marginBottom: "2rem" }}>
-                  <div style={{ width: "45px", height: "4px", background: "#0066ff", borderRadius: "2px" }} />
+                  <div style={{ width: "45px", height: "4px", background: "#1b439e", borderRadius: "2px" }} />
                   <div style={{ width: "35px", height: "4px", background: "#e2e8f0", borderRadius: "2px" }} />
                 </div>
 
@@ -126,7 +126,7 @@ export default function AboutClient() {
 
                 <div style={{
                   background: "rgba(0, 102, 255, 0.04)",
-                  borderLeft: "4px solid #0066ff",
+                  borderLeft: "4px solid #1b439e",
                   padding: "1.5rem",
                   borderRadius: "0 8px 8px 0",
                   marginBottom: "2rem",
@@ -147,7 +147,7 @@ export default function AboutClient() {
                       <div style={{
                         width: "24px",
                         height: "24px",
-                        background: "#0066ff",
+                        background: "#1b439e",
                         borderRadius: "50%",
                         display: "flex",
                         alignItems: "center",
@@ -173,7 +173,7 @@ export default function AboutClient() {
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 2rem" }}>
           <div className="client-section-title" style={{ textAlign: "center", marginBottom: "3rem" }}>
             <ScrollReveal direction="up">
-              <span style={{ color: "#0066ff", fontSize: "0.85rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.15em", display: "block", marginBottom: "0.5rem" }}>
+              <span style={{ color: "#1b439e", fontSize: "0.85rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.15em", display: "block", marginBottom: "0.5rem" }}>
                 ILS NOUS FONT CONFIANCE
               </span>
               <h2 style={{ fontFamily: "Ubuntu, sans-serif", fontWeight: 800, fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#1a1a2e", lineHeight: 1.2 }}>
@@ -227,7 +227,7 @@ export default function AboutClient() {
               position: "absolute",
               top: -1,
               height: 4,
-              background: "#0066ff",
+              background: "#1b439e",
               width: "40%",
               left: `${scrollProgress * 0.6}%`,
               transition: "left 0.15s ease-out",
@@ -238,7 +238,7 @@ export default function AboutClient() {
       </section>
 
       {/* CTA */}
-      <section style={{ padding: "8rem 2rem", background: "linear-gradient(135deg, #0066ff 0%, #1a1a2e 100%)", textAlign: "center", position: "relative", overflow: "hidden" }}>
+      <section style={{ padding: "8rem 2rem", background: "linear-gradient(135deg, #1b439e 0%, #1a1a2e 100%)", textAlign: "center", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", opacity: 0.1, backgroundImage: "radial-gradient(#fff 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
 
         <div style={{ position: "relative", zIndex: 1, maxWidth: 800, margin: "0 auto" }}>
@@ -249,7 +249,7 @@ export default function AboutClient() {
             {c.ctaSub}
           </p>
           <div style={{ display: "flex", gap: "1.5rem", justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href={`/devis`} className="cta-btn primary" style={{ background: "#fff", color: "#0066ff", fontWeight: 800, padding: "1.2rem 3rem", borderRadius: "12px", fontSize: "1rem", transition: "all 0.3s", boxShadow: "0 10px 25px rgba(0,0,0,0.1)", textDecoration: "none" }}>
+            <Link href={`/devis`} className="cta-btn primary" style={{ background: "#fff", color: "#1b439e", fontWeight: 800, padding: "1.2rem 3rem", borderRadius: "12px", fontSize: "1rem", transition: "all 0.3s", boxShadow: "0 10px 25px rgba(0,0,0,0.1)", textDecoration: "none" }}>
               {c.btnDevis}
             </Link>
             <Link href={`/contact`} className="cta-btn secondary" style={{ background: "transparent", color: "#fff", fontWeight: 700, padding: "1.2rem 3rem", borderRadius: "12px", border: "2px solid rgba(255,255,255,0.3)", fontSize: "1rem", transition: "all 0.3s", textDecoration: "none" }}>
@@ -265,7 +265,7 @@ export default function AboutClient() {
         
         .client-card-home:hover {
           transform: translateY(-5px);
-          border-color: #0066ff33 !important;
+          border-color: #1b439e33 !important;
           background: #fff !important;
           box-shadow: 0 15px 35px rgba(0, 102, 255, 0.08);
         }

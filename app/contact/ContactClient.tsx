@@ -137,7 +137,7 @@ export default function ContactClient() {
 
           <div style={{ marginBottom: "3rem" }}>
             <h2 style={{
-              fontFamily: "Ubuntu, sans-serif", color: "#0066ff",
+              fontFamily: "Ubuntu, sans-serif", color: "#1b439e",
               fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700, marginBottom: "0.7rem"
             }}>
               {c.accroche}
@@ -239,7 +239,7 @@ export default function ContactClient() {
                     <input
                       type="checkbox" checked={rappeler}
                       onChange={e => setRappeler(e.target.checked)}
-                      style={{ width: 18, height: 18, cursor: "pointer", accentColor: "#0066ff" }}
+                      style={{ width: 18, height: 18, cursor: "pointer", accentColor: "#1b439e" }}
                     />
                     {c.rappelerLabel}
                   </label>
@@ -247,7 +247,7 @@ export default function ContactClient() {
                   <div style={{ textAlign: "left" }}>
                     <button
                       onClick={() => { if (valider()) setEtat("choix"); }}
-                      style={{ background: "#0066ff", color: "#fff", border: "none", padding: "1rem 3rem", borderRadius: 0, fontWeight: 700, fontSize: "1rem", cursor: "pointer", letterSpacing: "0.5px" }}
+                      style={{ background: "#1b439e", color: "#fff", border: "none", padding: "1rem 3rem", borderRadius: 0, fontWeight: 700, fontSize: "1rem", cursor: "pointer", letterSpacing: "0.5px" }}
                     >
                       {c.envoyer}
                     </button>
@@ -257,17 +257,17 @@ export default function ContactClient() {
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", padding: 0, minWidth: "280px" }}>
-              <h4 style={{ fontFamily: "Ubuntu, sans-serif", color: "#0066ff", fontSize: "1.2rem", fontWeight: 700, marginBottom: "-0.5rem", textTransform: "uppercase" }}>
+              <h4 style={{ fontFamily: "Ubuntu, sans-serif", color: "#1b439e", fontSize: "1.2rem", fontWeight: 700, marginBottom: "-0.5rem", textTransform: "uppercase" }}>
                 {c.coordonneesTitre}
               </h4>
 
               {coordonnees.map(item => (
                 <div key={item.titre} style={{ display: "flex", gap: "1rem", alignItems: "start" }}>
                   <div style={{ width: 24, height: 24, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: "2px" }}>
-                    <item.Icon size={18} color="#0066ff" strokeWidth={2} />
+                    <item.Icon size={18} color="#1b439e" strokeWidth={2} />
                   </div>
                   <div>
-                    <h5 style={{ fontWeight: 700, color: "#0066ff", fontSize: "0.95rem", marginBottom: "0.1rem" }}>
+                    <h5 style={{ fontWeight: 700, color: "#1b439e", fontSize: "0.95rem", marginBottom: "0.1rem" }}>
                       {item.titre}
                     </h5>
                     {item.lignes.map(l => <p key={l} style={{ color: "#4b5563", fontSize: "0.88rem", lineHeight: 1.5 }}>{l}</p>)}

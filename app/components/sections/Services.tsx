@@ -69,7 +69,7 @@ export default function Services() {
         <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
           <ScrollReveal direction="up">
             <span style={{
-              color: "#0066ff", fontSize: "0.75rem", fontWeight: 800,
+              color: "#1b439e", fontSize: "0.75rem", fontWeight: 800,
               textTransform: "uppercase", letterSpacing: "0.15em", display: "block", marginBottom: "0.75rem"
             }}>
               {sLocal.tag}
@@ -178,7 +178,7 @@ export default function Services() {
             position: "absolute",
             top: -1,
             height: 4,
-            background: "#0066ff",
+            background: "#1b439e",
             width: "40%",
             left: `${scrollProgress * 0.6}%`,
             transition: "left 0.15s ease-out",
@@ -191,12 +191,12 @@ export default function Services() {
         .horizontal-scroll::-webkit-scrollbar { display: none; }
         
         .service-card:hover .service-icon {
-          color: #0066ff !important;
+          color: #1b439e !important;
           transform: translateY(-5px);
         }
 
         .service-card:hover h3 {
-          color: #0066ff !important;
+          color: #1b439e !important;
         }
 
         .client-logo {

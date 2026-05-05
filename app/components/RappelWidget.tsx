@@ -42,7 +42,7 @@ export default function RappelWidget() {
       <Link
         href={`/devis`}
         style={{
-          background: "#0066ff",
+          background: "#1b439e",
           color: "#fff",
           border: "none",
           borderRadius: 50,
@@ -69,7 +69,7 @@ export default function RappelWidget() {
           const b = e.currentTarget;
           b.style.transform = "translateY(0) scale(1)";
           b.style.boxShadow = "0 4px 16px rgba(0,102,204,0.4)";
-          b.style.background = "#0066ff";
+          b.style.background = "#1b439e";
         }}
       >
         <span style={{ fontSize: "1.1rem" }}>📄</span>

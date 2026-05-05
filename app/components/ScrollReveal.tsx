@@ -7,6 +7,7 @@ import { useEffect, useRef, ReactNode } from "react";
 
 const OFFSETS: Record<string, string> = {
   up:    "translateY(24px)",
+  down:  "translateY(-24px)",
   left:  "translateX(-24px)",
   right: "translateX(24px)",
   fade:  "none",
@@ -15,7 +16,7 @@ const OFFSETS: Record<string, string> = {
 interface Props {
   children: ReactNode;
   delay?: number;
-  direction?: "up" | "left" | "right" | "fade";
+  direction?: "up" | "down" | "left" | "right" | "fade";
   threshold?: number;
 }
 

@@ -4,11 +4,11 @@ import ScrollReveal from "./ScrollReveal";
 import { Crosshair, MapPin, Zap, Wrench, Lock } from "./Icons";
 
 const REASONS = [
-  { Icon: Crosshair, title: "Solutions personnalisées",          desc: "On ne vend pas du prêt-à-poser. On vient chez vous, on regarde, on écoute. La solution vient après.", color: "#0066ff" },
+  { Icon: Crosshair, title: "Solutions personnalisées",          desc: "On ne vend pas du prêt-à-poser. On vient chez vous, on regarde, on écoute. La solution vient après.", color: "#1b439e" },
   { Icon: MapPin,    title: "Expertise locale & internationale", desc: "Basés à Douala, on applique des standards internationaux tout en connaissant les contraintes locales.", color: "#0052d4" },
-  { Icon: Zap,       title: "Réactifs et innovants",             desc: "Problème urgent ? On répond et on se déplace. Matériel moderne, méthodes éprouvées.", color: "#0066ff" },
+  { Icon: Zap,       title: "Réactifs et innovants",             desc: "Problème urgent ? On répond et on se déplace. Matériel moderne, méthodes éprouvées.", color: "#1b439e" },
   { Icon: Wrench,    title: "Service après-vente assuré",        desc: "On ne disparaît pas après l'installation. Maintenance, vérifications, dépannage — on assume.", color: "#0052d4" },
-  { Icon: Lock,      title: "Respect de la confidentialité",     desc: "On accède à vos locaux et données sensibles. Tout reste strictement confidentiel.", color: "#0066ff" },
+  { Icon: Lock,      title: "Respect de la confidentialité",     desc: "On accède à vos locaux et données sensibles. Tout reste strictement confidentiel.", color: "#1b439e" },
 ];
 
 export default function WhyBDT() {

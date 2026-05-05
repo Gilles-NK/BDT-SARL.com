@@ -12,6 +12,7 @@
 //  │  Services           │  components/sections/Services.tsx │
 //  │  Processus          │  components/sections/Processus.tsx│
 //  │  Formulaire         │  components/ContactSection.tsx    │
+//  │  Équipe             │  components/sections/Team.tsx       │
 //  │  Témoignages        │  components/sections/Temoignages.tsx │
 //  │  CTA Final          │  components/sections/CtaFinal.tsx │
 //  └─────────────────────┴───────────────────────────────────┘
@@ -23,6 +24,7 @@ import Presentation from "./components/sections/Presentation";
 import Services from "./components/sections/Services";
 import Processus from "./components/sections/Processus";
 import ContactSection from "./components/ContactSection";
+import Team from "./components/sections/Team";
 import Temoignages from "./components/sections/Temoignages";
 import CtaFinal from "./components/sections/CtaFinal";
 import Vision from "./components/sections/Vision";
@@ -75,6 +77,9 @@ export default function Home() {
 
       {/* 7. LA MÉTHODE : Comment nous travaillons (4 étapes) */}
       <Processus />
+
+      {/* 7.5 L'ÉQUIPE : Les visages de notre expertise */}
+      <Team />
 
       {/* 8. LA PREUVE SOCIALE : Ce que disent nos clients */}
       <Temoignages />

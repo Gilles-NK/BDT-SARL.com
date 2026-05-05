@@ -180,10 +180,10 @@ export default function ContactChoiceModal({ isOpen, onClose, onSelect, translat
 
         .email-card .icon-wrapper {
           background: rgba(0, 102, 255, 0.1);
-          color: #0066ff;
+          color: #1b439e;
         }
         .email-card:hover .icon-wrapper {
-          background: #0066ff;
+          background: #1b439e;
           color: #fff;
         }
 
@@ -212,7 +212,7 @@ export default function ContactChoiceModal({ isOpen, onClose, onSelect, translat
         }
 
         .wa-card:hover .hover-indicator { background: #25D366; }
-        .email-card:hover .hover-indicator { background: #0066ff; }
+        .email-card:hover .hover-indicator { background: #1b439e; }
 
         .cancel-footer {
           margin-top: 2rem;

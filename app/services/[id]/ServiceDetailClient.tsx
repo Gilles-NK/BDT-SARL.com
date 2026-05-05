@@ -20,7 +20,7 @@ export default function ServiceDetailClient({ id }: { id: string }) {
   const tabs = details?.tabs || [];
   const [activeTab, setActiveTab] = useState(tabs.length > 0 ? tabs[0].id : "");
 
-  const ADESSO_BLUE = "#0066ff";
+  const ADESSO_BLUE = "#003B71";
   const NAVY_TEXT = "#1a1a2e";
 
   const currentTabObj = tabs.find(tab => tab.id === activeTab);
@@ -283,7 +283,7 @@ export default function ServiceDetailClient({ id }: { id: string }) {
           font-family: 'Ubuntu', sans-serif; font-weight: 600; font-size: 0.9rem; color: #64748b;
           border-top: 3px solid transparent; transition: all 0.3s;
         }
-        .tab-btn.is-active { background: #fff; color: ${NAVY_TEXT}; border-top: 3px solid #0066ff; }
+        .tab-btn.is-active { background: #fff; color: ${NAVY_TEXT}; border-top: 3px solid #003B71; }
 
         .tab-content-text { padding: 40px 0; }
         .tab-title { font-size: 1.8rem; color: ${NAVY_TEXT}; margin-bottom: 20px; font-weight: 700; }
@@ -412,7 +412,7 @@ export default function ServiceDetailClient({ id }: { id: string }) {
           .service-image-box { height: 250px; }
           .navigation-tabs { flex-direction: column; background: #fff; }
           .tab-btn { border-top: none; border-left: 3px solid transparent; text-align: left; padding: 15px 20px; border-bottom: 1px solid #f1f5f9; }
-          .tab-btn.is-active { border-top: none; border-left: 3px solid #0066ff; background: #f8fafc; }
+          .tab-btn.is-active { border-top: none; border-left: 3px solid #003B71; background: #f8fafc; }
           
         }
 
@@ -483,7 +483,7 @@ export default function ServiceDetailClient({ id }: { id: string }) {
           font-size: 1.3rem; font-weight: 800; color: #1a1a2e;
           padding-bottom: 10px; margin-bottom: 20px; display: flex; align-items: center;
         }
-        .widget-title::before { content: ""; width: 25px; height: 4px; background: #0066ff; margin-right: 12px; }
+        .widget-title::before { content: ""; width: 25px; height: 4px; background: #003B71; margin-right: 12px; }
 
         .services-nav-list { list-style: none !important; padding: 0 !important; margin-bottom: 40px; }
         .services-nav-list li { border-bottom: 1px solid #e2e8f0 !important; }
@@ -494,17 +494,17 @@ export default function ServiceDetailClient({ id }: { id: string }) {
           text-transform: uppercase; transition: all 0.3s ease; position: relative;
         }
         .services-nav-list :global(a:hover), .services-nav-list :global(a.active) {
-          color: #0066ff !important; padding-left: 15px !important;
+          color: #003B71 !important; padding-left: 15px !important;
         }
         .services-nav-list :global(a::before) {
           content: "" !important; position: absolute; left: 0; top: 30%; bottom: 30%;
-          width: 3px; background-color: #0066ff; transform: scaleY(0); transition: transform 0.3s;
+          width: 3px; background-color: #003B71; transform: scaleY(0); transition: transform 0.3s;
         }
         .services-nav-list :global(a:hover::before), .services-nav-list :global(a.active::before) { transform: scaleY(1); }
 
         .contact-info-list { list-style: none !important; padding: 0 !important; }
         .contact-info-list li { display: flex !important; gap: 15px !important; margin-bottom: 20px; color: #64748b !important; font-size: 0.9rem; }
-        .icon-blue { color: #0066ff !important; flex-shrink: 0; }
+        .icon-blue { color: #003B71 !important; flex-shrink: 0; }
         .contact-info-list :global(a) { color: inherit !important; text-decoration: none !important; }
         .phone-stack { display: flex; flex-direction: column; gap: 5px; }
 

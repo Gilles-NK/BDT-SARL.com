@@ -116,7 +116,7 @@ export default function Hero() {
 
         {/* Tag */}
         <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 22, animation: "hFadeUp 0.55s 0.00s ease both" }}>
-          <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#0066ff", boxShadow: "0 0 10px rgba(0, 102, 255, 0.9)", flexShrink: 0 }} />
+          <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#1b439e", boxShadow: "0 0 10px rgba(0, 102, 255, 0.9)", flexShrink: 0 }} />
           <span style={{ fontSize: "0.70rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase" as const, color: "rgba(255,255,255,0.68)" }}>
             {isFr ? slide.tagFr : slide.tagEn}
           </span>
@@ -155,7 +155,7 @@ export default function Hero() {
             className="btn-premium hover-lift"
             style={{
               display: "inline-flex", alignItems: "center", gap: 8,
-              background: "#0066ff", color: "#fff", fontWeight: 700,
+              background: "#1b439e", color: "#fff", fontWeight: 700,
               fontSize: "clamp(0.85rem, 1.4vw, 0.98rem)",
               padding: "0.80rem 1.70rem", borderRadius: 4, textDecoration: "none",
               boxShadow: "0 4px 20px rgba(0, 102, 255, 0.40)", transition: "all 0.3s ease",
@@ -209,7 +209,7 @@ export default function Hero() {
                 flexShrink: 0,
                 transition: "width 0.35s ease, background 0.3s ease, box-shadow 0.3s ease",
                 /* Couleur : bleu vif pour active, blanc translucide pour les autres */
-                background: isActive ? "#0066ff" : "rgba(255,255,255,0.30)",
+                background: isActive ? "#1b439e" : "rgba(255,255,255,0.30)",
                 boxShadow: isActive ? "0 0 16px rgba(0,102,255,0.75)" : "none",
               }}
             />

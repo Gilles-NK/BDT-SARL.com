@@ -65,8 +65,8 @@ export default function Header() {
     background: "none", border: "none", cursor: "pointer",
     padding: "0.2rem 0.45rem", fontSize: "0.82rem",
     fontWeight: l === langue ? 700 : 400,
-    color: l === langue ? "#0066ff" : "var(--gray-500)",
-    borderBottom: "2px solid " + (l === langue ? "#0066ff" : "transparent"),
+    color: l === langue ? "#1b439e" : "var(--gray-500)",
+    borderBottom: "2px solid " + (l === langue ? "#1b439e" : "transparent"),
     transition: "all 0.15s", fontFamily: "inherit",
   });
 
@@ -84,7 +84,7 @@ export default function Header() {
         style={{
           position: "sticky", top: 0, zIndex: 1000,
           background: scrolled ? "rgba(255, 255, 255, 0.8)" : "#fff",
-          borderBottom: scrolled ? "1px solid rgba(0, 102, 255, 0.1)" : "3px solid #0066ff",
+          borderBottom: scrolled ? "1px solid rgba(0, 102, 255, 0.1)" : "3px solid #1b439e",
           overflow: "visible",
           boxShadow: scrolled ? "0 10px 30px rgba(0,0,0,0.05)" : "none",
           transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
@@ -116,20 +116,20 @@ export default function Header() {
                   style={{
                     display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.4rem",
                     padding: "0 1.25rem", height: "100%", textDecoration: "none",
-                    color: isActive ? "#0066ff" : "var(--gray-600)",
-                    borderBottom: isActive ? "3px solid #0066ff" : "3px solid transparent",
+                    color: isActive ? "#1b439e" : "var(--gray-600)",
+                    borderBottom: isActive ? "3px solid #1b439e" : "3px solid transparent",
                     backgroundColor: isActive ? "#fff" : "transparent",
                     transition: "color 0.2s, border-color 0.2s, background-color 0.2s",
                   }}
                   onMouseEnter={e => {
-                    (e.currentTarget as HTMLElement).style.color = "#0066ff";
+                    (e.currentTarget as HTMLElement).style.color = "#1b439e";
                     (e.currentTarget as HTMLElement).style.backgroundColor = "#fafafa";
-                    (e.currentTarget as HTMLElement).style.borderBottomColor = "#0066ff";
+                    (e.currentTarget as HTMLElement).style.borderBottomColor = "#1b439e";
                   }}
                   onMouseLeave={e => {
-                    (e.currentTarget as HTMLElement).style.color = isActive ? "#0066ff" : "var(--gray-600)";
+                    (e.currentTarget as HTMLElement).style.color = isActive ? "#1b439e" : "var(--gray-600)";
                     (e.currentTarget as HTMLElement).style.backgroundColor = isActive ? "#fff" : "transparent";
-                    (e.currentTarget as HTMLElement).style.borderBottomColor = isActive ? "#0066ff" : "transparent";
+                    (e.currentTarget as HTMLElement).style.borderBottomColor = isActive ? "#1b439e" : "transparent";
                   }}>
                   <item.Icon size={20} strokeWidth={1.3} />
                   <span style={{ fontSize: "0.75rem", fontWeight: isActive ? 600 : 400, letterSpacing: "0.04em", textTransform: "uppercase", lineHeight: 1, whiteSpace: "nowrap" }}>{item.label}</span>
@@ -147,9 +147,9 @@ export default function Header() {
                 transition: "color 0.2s, background-color 0.2s, border-color 0.2s",
               }}
               onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.color = "#0066ff";
+                (e.currentTarget as HTMLElement).style.color = "#1b439e";
                 (e.currentTarget as HTMLElement).style.backgroundColor = "#fafafa";
-                (e.currentTarget as HTMLElement).style.borderBottomColor = "#0066ff";
+                (e.currentTarget as HTMLElement).style.borderBottomColor = "#1b439e";
               }}
               onMouseLeave={e => {
                 (e.currentTarget as HTMLElement).style.color = "var(--gray-600)";
@@ -234,7 +234,7 @@ export default function Header() {
                   style={{
                     width: "100%",
                     padding: "1.1rem 4rem 1.1rem 1.6rem",
-                    border: "2px solid #0066ff",
+                    border: "2px solid #1b439e",
                     borderRadius: 40,
                     fontSize: "1.05rem",
                     outline: "none",
@@ -248,7 +248,7 @@ export default function Header() {
                   style={{
                     position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)",
                     background: "none", border: "none", cursor: "pointer",
-                    color: "#0066ff", display: "flex", alignItems: "center",
+                    color: "#1b439e", display: "flex", alignItems: "center",
                   }}>
                   <Search size={22} strokeWidth={2} />
                 </button>
@@ -279,7 +279,7 @@ export default function Header() {
         transition: "transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
         display: "flex", flexDirection: "column",
         overflowY: "auto",
-        borderLeft: "4px solid #0066ff",
+        borderLeft: "4px solid #1b439e",
         boxShadow: "-10px 0 30px rgba(0,0,0,0.1)"
       }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "1.25rem 1.75rem", borderBottom: "1px solid #f3f4f6" }}>
@@ -307,18 +307,18 @@ export default function Header() {
                 style={{
                   display: "flex", alignItems: "center", gap: "1.25rem",
                   padding: "1.1rem 1.75rem",
-                  color: isActive ? "#0066ff" : "#0D1B2A",
+                  color: isActive ? "#1b439e" : "#0D1B2A",
                   fontWeight: isActive ? 700 : 400, fontSize: "1.05rem",
                   borderBottom: "1px solid #f3f4f6",
-                  borderLeft: isActive ? "3px solid #0066ff" : "3px solid transparent",
+                  borderLeft: isActive ? "3px solid #1b439e" : "3px solid transparent",
                   background: isActive ? "#fdf8ec" : "transparent",
                   transition: "background 0.15s, border-color 0.15s",
                   textDecoration: "none",
                 }}
-                onMouseEnter={e => { if (!isActive) { (e.currentTarget as HTMLElement).style.background = "#fdf8ec"; (e.currentTarget as HTMLElement).style.borderLeftColor = "#0066ff"; } }}
+                onMouseEnter={e => { if (!isActive) { (e.currentTarget as HTMLElement).style.background = "#fdf8ec"; (e.currentTarget as HTMLElement).style.borderLeftColor = "#1b439e"; } }}
                 onMouseLeave={e => { if (!isActive) { (e.currentTarget as HTMLElement).style.background = "transparent"; (e.currentTarget as HTMLElement).style.borderLeftColor = "transparent"; } }}>
-                <div style={{ width: 38, height: 38, background: isActive ? "#0066ff" : "#fdf8ec", borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <item.Icon size={18} color={isActive ? "#fff" : "#0066ff"} strokeWidth={1.8} />
+                <div style={{ width: 38, height: 38, background: isActive ? "#1b439e" : "#fdf8ec", borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <item.Icon size={18} color={isActive ? "#fff" : "#1b439e"} strokeWidth={1.8} />
                 </div>
                 {item.label}
               </Link>
@@ -333,7 +333,7 @@ export default function Header() {
                 <input type="text" value={query} onChange={e => setQuery(e.target.value)} placeholder={t.nav.placeholder}
                   style={{ width: "100%", padding: "0.7rem 0.8rem 0.7rem 2.2rem", border: "1.5px solid #e5e7eb", borderRadius: 8, fontSize: "0.88rem", outline: "none", background: "#fff" }} />
               </div>
-              <button type="submit" style={{ background: "#0066ff", color: "#fff", border: "none", padding: "0 1rem", borderRadius: 8, cursor: "pointer" }}>
+              <button type="submit" style={{ background: "#1b439e", color: "#fff", border: "none", padding: "0 1rem", borderRadius: 8, cursor: "pointer" }}>
                 <Search size={16} color="#fff" />
               </button>
             </form>

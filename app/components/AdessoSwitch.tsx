@@ -17,7 +17,7 @@ export default function AdessoSwitch({ leftLabel, rightLabel, active, onChange }
     <div style={{ display: "inline-flex", alignItems: "center", gap: "1.25rem", fontWeight: 700 }}>
       <span
         onClick={() => onChange("left")}
-        style={{ cursor: "pointer", color: active === "left" ? "#0066ff" : "#94a3b8", transition: "0.2s", fontSize: "1rem" }}
+        style={{ cursor: "pointer", color: active === "left" ? "#1b439e" : "#94a3b8", transition: "0.2s", fontSize: "1rem" }}
       >
         {leftLabel}
       </span>
@@ -25,12 +25,12 @@ export default function AdessoSwitch({ leftLabel, rightLabel, active, onChange }
       <div
         onClick={() => onChange(active === "left" ? "right" : "left")}
         style={{
-          width: 52, height: 26, border: "2px solid #0066ff", background: "#fff",
+          width: 52, height: 26, border: "2px solid #1b439e", background: "#fff",
           borderRadius: 20, position: "relative", cursor: "pointer"
         }}
       >
         <div style={{
-          width: 16, height: 16, background: "#0066ff", borderRadius: "50%",
+          width: 16, height: 16, background: "#1b439e", borderRadius: "50%",
           position: "absolute", top: 3, transition: "left 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
           left: active === "left" ? "4px" : "28px"
         }} />
@@ -38,7 +38,7 @@ export default function AdessoSwitch({ leftLabel, rightLabel, active, onChange }
 
       <span
         onClick={() => onChange("right")}
-        style={{ cursor: "pointer", color: active === "right" ? "#0066ff" : "#94a3b8", transition: "0.2s", fontSize: "1rem" }}
+        style={{ cursor: "pointer", color: active === "right" ? "#1b439e" : "#94a3b8", transition: "0.2s", fontSize: "1rem" }}
       >
         {rightLabel}
       </span>

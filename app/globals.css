@@ -5,11 +5,11 @@ html { scroll-behavior: smooth; }
   --navy      : #1a1a2e;
   --navy-deep : #0d1221;
   --navy-soft : #252a4a;
-  --blue      : #0066ff;
-  --blue-h    : #0052d4;
-  --blue-dark : #003fa3;
-  --blue-lt   : #e8f0ff;
-  --blue-mid  : #ccd9ff;
+  --blue      : #1b439e;
+  --blue-h    : #15357d;
+  --blue-dark : #0d2252;
+  --blue-lt   : #f0f4ff;
+  --blue-mid  : #d6e0ff;
   --white     : #ffffff;
   --gray-50   : #f8f9fb;
   --gray-100  : #f1f3f7;

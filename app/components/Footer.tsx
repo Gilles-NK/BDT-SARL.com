@@ -124,7 +124,7 @@ export default function Footer() {
           background-color: #F8F7F4;
           color: #111;
           padding: 30px 24px 20px;
-          border-top: 3px solid #0066ff;
+          border-top: 3px solid #1b439e;
           font-family: Arial, sans-serif;
         }
         .footer-content {
@@ -162,13 +162,13 @@ export default function Footer() {
           width: 34px;
           height: 34px;
           border-radius: 50%;
-          border: 1.5px solid #0066ff;
-          color: #0066ff;
+          border: 1.5px solid #1b439e;
+          color: #1b439e;
           transition: background 0.25s, color 0.25s;
           text-decoration: none;
         }
         .soc-btn:hover {
-          background: #0066ff;
+          background: #1b439e;
           color: #fff;
         }
 
@@ -212,7 +212,7 @@ export default function Footer() {
           padding: 2px 4px;
         }
         .info-item:hover {
-          color: #0066ff;
+          color: #1b439e;
         }
         .info-item:hover .accent-icon {
           color: #0050d1;
@@ -221,7 +221,7 @@ export default function Footer() {
           display: none;
         }
         .accent-icon {
-          color: #0066ff;
+          color: #1b439e;
           flex-shrink: 0;
           transition: color 0.2s;
         }
@@ -263,7 +263,7 @@ export default function Footer() {
           white-space: nowrap;
         }
         .nav-item:hover {
-          color: #0066ff;
+          color: #1b439e;
         }
 
         /* Bas */
@@ -286,7 +286,7 @@ export default function Footer() {
           text-decoration: none;
           transition: color 0.2s;
         }
-        .legal-link:hover { color: #0066ff; }
+        .legal-link:hover { color: #1b439e; }
         .legal-sep { color: #ccc; }
 
         /* ── Desktop ── */

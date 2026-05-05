@@ -26,7 +26,7 @@ export default function NotFound() {
             : "La page que vous recherchez n'existe pas ou a été déplacée. Retournez à l'accueil pour continuer votre navigation."}
         </p>
         <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-          <Link href="/" style={{ background: "#0066ff", color: "#fff", padding: "0.9rem 2rem", borderRadius: 4, textDecoration: "none", fontWeight: 700, fontSize: "1rem" }}>
+          <Link href="/" style={{ background: "#1b439e", color: "#fff", padding: "0.9rem 2rem", borderRadius: 4, textDecoration: "none", fontWeight: 700, fontSize: "1rem" }}>
             {isEn ? "Return Home" : "Retour à l'accueil"}
           </Link>
           <Link href="/contact" style={{ background: "transparent", color: "#0083ff", padding: "0.9rem 2rem", borderRadius: 4, textDecoration: "none", fontWeight: 700, fontSize: "1rem", border: "2px solid #0083ff" }}>

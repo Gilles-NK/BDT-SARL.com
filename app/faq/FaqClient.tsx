@@ -7,7 +7,7 @@ import { useLangue } from "../lib/LangueContext";
 import { Search, Shield, Settings, BadgeCheck, Wrench, Lock, ChevronDown, MessageCircle, FileText } from "lucide-react";
 
 function Item({ q, a, isOpen, onToggle }: { q: string; a: string; isOpen: boolean; onToggle: () => void }) {
-  const ADESSO_BLUE = "#0066ff";
+  const ADESSO_BLUE = "#003B71";
   const NAVY = "#1a1a2e";
 
   return (
@@ -80,7 +80,7 @@ export default function FaqClient() {
   const [search, setSearch] = useState("");
   const [activeId, setActiveId] = useState<string | null>(null);
 
-  const ADESSO_BLUE = "#0066ff";
+  const ADESSO_BLUE = "#003B71";
   const NAVY = "#1a1a2e";
 
   const toggle = (id: string) => {

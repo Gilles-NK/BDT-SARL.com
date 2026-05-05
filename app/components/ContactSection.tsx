@@ -91,7 +91,7 @@ export default function ContactSection() {
               fontFamily: "Ubuntu, sans-serif",
               fontWeight: 700,
               fontSize: "2rem",
-              color: "#0066ff",
+              color: "#1b439e",
               marginBottom: "1rem"
             }}>
               {t.formulaire.titre}
@@ -382,7 +382,7 @@ export default function ContactSection() {
           transition: 0.2s;
         }
         .btn-wa { background: #25D366; color: #fff; }
-        .btn-mail { background: #0066ff; color: #fff; }
+        .btn-mail { background: #1b439e; color: #fff; }
         .btn-cancel { background: #eee; color: #333; text-align: center !important; }
         
         .modal-btns button span {

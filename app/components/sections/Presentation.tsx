@@ -153,7 +153,7 @@ export default function Presentation() {
               fontFamily: "'Ubuntu', sans-serif"
             }}>
               Avec une équipe d'experts passionnés et des interventions sur{" "}
-              <Link href="/contact" style={{ color: "#0066ff", fontWeight: 700, textDecoration: "underline" }}>
+              <Link href="/contact" style={{ color: "#1b439e", fontWeight: 700, textDecoration: "underline" }}>
                 plus de 10 sites stratégiques
               </Link>{" "}
               au Cameroun, BDT s'impose comme un partenaire de confiance en sécurité électronique et informatique. 

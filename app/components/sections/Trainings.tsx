@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import ScrollReveal from "../ScrollReveal";
-import { Calendar, MapPin, ArrowRight } from "lucide-react";
+import { Calendar, MapPin, ArrowRight, FileText } from "lucide-react";
 
 const formations = [
   {
@@ -110,45 +110,62 @@ export default function Trainings() {
         }}>
           {formations.map((f, i) => (
             <ScrollReveal key={f.id} direction="up" delay={i * 150}>
-              <div className="training-card glass-effect" style={{
+              <div className="training-card" style={{
                 height: "100%",
                 display: "flex",
-                flexDirection: "column"
+                flexDirection: "column",
+                background: "#fff",
+                borderRadius: "24px",
+                overflow: "hidden",
+                border: "1px solid #edf2f7",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.04)",
+                position: "relative",
+                transition: "all 0.4s ease"
               }}>
-                {/* Image plus petite */}
-                <div style={{ width: "100%", height: "180px", overflow: "hidden", position: "relative" }}>
+                {/* Image Section */}
+                <div style={{ width: "100%", height: "220px", overflow: "hidden", position: "relative" }}>
                   <img src={f.image} alt={f.titre} style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.5s ease" }} className="card-img" />
+                  
+                  {/* Badge Formation */}
                   <div style={{
                     position: "absolute",
-                    top: "0.75rem",
-                    left: "0.75rem",
+                    top: "1.2rem",
+                    left: "1.2rem",
                     background: "var(--blue)",
                     color: "#fff",
-                    padding: "0.3rem 0.8rem",
-                    borderRadius: "50px",
-                    fontSize: "0.7rem",
-                    fontWeight: 700
+                    padding: "0.6rem 1.4rem",
+                    borderRadius: "14px",
+                    fontSize: "0.85rem",
+                    fontWeight: 800,
+                    boxShadow: "0 4px 12px rgba(27, 67, 158, 0.3)"
                   }}>
                     Formation
                   </div>
                 </div>
 
-                {/* Contenu plus compact */}
-                <div style={{ padding: "1.5rem", flexGrow: 1, display: "flex", flexDirection: "column" }}>
-                  <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", gap: "1.2rem", marginBottom: "1rem", fontSize: "0.8rem", color: "#64748b" }}>
+                {/* Contenu */}
+                <div style={{ padding: "1.8rem", flexGrow: 1, display: "flex", flexDirection: "column" }}>
+                  <div style={{ display: "flex", gap: "1rem", marginBottom: "1.2rem", fontSize: "0.85rem", color: "#64748b" }}>
                     <span style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                      <Calendar size={14} color="var(--blue)" /> {f.date}
+                      <Calendar size={15} color="var(--blue)" /> {f.date}
                     </span>
                     <span style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                      <MapPin size={14} color="var(--blue)" /> {f.lieu}
+                      <MapPin size={15} color="var(--blue)" /> {f.lieu}
                     </span>
                   </div>
 
-                  <h3 style={{ fontSize: "1.1rem", fontWeight: 800, marginBottom: "0.75rem", color: "#0d1b2a", lineHeight: 1.3 }}>
+                  <h3 style={{ 
+                    fontSize: "1.25rem", 
+                    fontWeight: 800, 
+                    marginBottom: "1rem", 
+                    color: "#0d1b2a", 
+                    lineHeight: 1.3,
+                    fontFamily: "Ubuntu, sans-serif"
+                  }}>
                     {f.titre}
                   </h3>
 
-                  <p style={{ fontSize: "0.85rem", color: "#475569", lineHeight: 1.6, marginBottom: "1.5rem" }}>
+                  <p style={{ fontSize: "0.9rem", color: "#475569", lineHeight: 1.6, marginBottom: "2rem" }}>
                     {f.desc}
                   </p>
 

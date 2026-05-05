@@ -27,8 +27,8 @@ const getImage = (id: string) => {
   }
 };
 
-const ACCENT = "#0066ff";
-const ADESSO_BLUE = "#0066ff";
+const ACCENT = "#003B71";
+const ADESSO_BLUE = "#003B71";
 const NAVY = "#1a1a2e";
 
 export default function ServicesClient() {
@@ -186,7 +186,7 @@ export default function ServicesClient() {
         }
 
         .service-card:hover .service-content h3 {
-          color: #0066ff;
+          color: #003B71;
         }
 
         .service-image-container {

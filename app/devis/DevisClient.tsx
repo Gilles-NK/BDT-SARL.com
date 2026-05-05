@@ -29,7 +29,7 @@ export default function DevisClient() {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [sent, setSent] = useState(false);
 
-  const ADESSO_BLUE = "#0066ff";
+  const ADESSO_BLUE = "#003B71";
   const NAVY = "#1a1a2e";
 
   const toggleService = (val: string) => {
@@ -259,7 +259,7 @@ export default function DevisClient() {
                       <div key={opt.val} onClick={() => setForm({ ...form, contactPreference: opt.val })} className="contact-card-premium"
                         style={{
                           padding: "1.5rem",
-                          border: isSelected ? `2px solid ${isWA ? "#25D366" : "#0066ff"}` : "1px solid #e2e8f0",
+                          border: isSelected ? `2px solid ${isWA ? "#25D366" : "#003B71"}` : "1px solid #e2e8f0",
                           borderRadius: "20px",
                           cursor: "pointer",
                           background: isSelected ? (isWA ? "rgba(37, 211, 102, 0.05)" : "rgba(0, 102, 255, 0.05)") : "#fff",
@@ -273,7 +273,7 @@ export default function DevisClient() {
                           width: 56, 
                           height: 56, 
                           borderRadius: "15px", 
-                          background: isSelected ? (isWA ? "#25D366" : "#0066ff") : "#f1f5f9", 
+                          background: isSelected ? (isWA ? "#25D366" : "#003B71") : "#f1f5f9", 
                           display: "flex", 
                           alignItems: "center", 
                           justifyContent: "center", 
